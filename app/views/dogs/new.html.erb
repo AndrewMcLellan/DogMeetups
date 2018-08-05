@@ -1,0 +1,37 @@
+<h2>Sign up</h2>
+
+<%= form_for(@dog) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :breed %><br />
+    <%= f.text_field :breed, autocomplete: "breed" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age, autocomplete: "age" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight, autocomplete: "weight" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Add Dog" %>
+  </div>
+<% end %>
+
+<% if !@errors.nil? %>
+<ul>
+  <% @errors.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ul>
+<% end %>
