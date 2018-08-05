@@ -1,6 +1,8 @@
 class DogsController < ApplicationController
   def new
     @dog = Dog.new
+    @age_collection = Dog::AGE_RANGES
+    @boolean_collection = Dog::BOOLEAN_BEHAVIOR
   end
 
   def create
