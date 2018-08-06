@@ -1,0 +1,10 @@
+<!-- <div class="field">
+  <%= f.label :age %><br />
+  <%= f.collection_select(:age, @age_collection, :last, :first, { include_blank: true }) %>
+</div> -->
+</div>
+
+<!-- <div class="field">
+  <%= f.label :good_with_puppies %>
+  <%= f.collection_radio_buttons(:good_with_puppies, @boolean_collection, :first, :last) %>
+</div> -->

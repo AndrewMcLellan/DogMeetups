@@ -7,10 +7,10 @@ class DogsController < ApplicationController
 
   def create
     @dog = Dog.new(dog_params)
-    @dog.user = current_user
+    @dog.user_id = current_user.id
     if @dog.save
-      binding.pry
       flash[:notice] = "Dog Added to Profile"
+      redirect_to new_dog_path
     else
       @errors = @dog.errors.full_messages
       render action: 'new'
@@ -19,6 +19,6 @@ class DogsController < ApplicationController
 
   private
   def dog_params
-    params.require(:dog).permit(:name, :breed, :age, :weight)
+    params.require(:dog).permit(:name, :breed, :age, :weight, :good_with_puppies)
   end
 end
