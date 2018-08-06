@@ -1,13 +1,12 @@
 class Dog < ApplicationRecord
-  validates :name, :breed, :age, :weight, presence: true
 
   AGE_RANGES = [
-    ["6 month- 1 Year"],
-    ["1-2 Years"],
-    ["2-5 Years"],
-    ["5-8 Years"],
-    ["8-10 Years"],
-    ["Senior Dog"]
+    [0 , "6 month- 1 Year"],
+    [1 , "1-2 Years"],
+    [2 , "2-5 Years"],
+    [3 , "5-8 Years"],
+    [4 , "8-10 Years"],
+    [5, "Senior Dog"]
   ]
 
   BOOLEAN_BEHAVIOR = [
@@ -15,5 +14,9 @@ class Dog < ApplicationRecord
     [false, "No"]
   ]
 
-  belongs_to :user
+  validates :name, :breed, :weight, presence: true
+  # validates :age,
+  #   presence: true,
+  #   inclusion: { in: AGE_RANGES.map { |age_range| age_range[1] } }
+  # belongs_to :user
 end
