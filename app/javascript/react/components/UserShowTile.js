@@ -2,8 +2,6 @@ import React from 'react'
 
 
 const UserShowTile = (props) => {
-
-
   return(
     <div>
       {props.firstName}<br />
@@ -12,7 +10,6 @@ const UserShowTile = (props) => {
       {props.city}<br />
       {props.state}<br/>
       {props.zip}<br/>
-    <div></div>
     </div>
   )
 }

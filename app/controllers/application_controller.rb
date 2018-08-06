@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
       :city,
       :state,
       :zip,
-      :user_id
+      :user_id,
+      :profile_photo
       ])
  end
 end
