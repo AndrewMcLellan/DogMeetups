@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import UserShowTile from '../components/UserShowTile'
+import DogShowTile from '../components/DogShowTile'
+
 
 
 class UserShowContainer extends Component {
@@ -12,8 +14,9 @@ class UserShowContainer extends Component {
         address: "",
         city: "",
         state: "",
-        zip: ""
-      }
+        zip: "",
+      },
+      user_dogs: []
 
     }
   }
@@ -33,7 +36,8 @@ class UserShowContainer extends Component {
     .then(response => {
       console.log(response)
       this.setState({
-        user: response.user
+        user: response.user,
+        user_dogs: response.user.user_dogs
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -41,18 +45,40 @@ class UserShowContainer extends Component {
 
 
   render() {
+
+
+    let userDogs = this.state.user_dogs.map(dog => {
+      return(
+        <DogShowTile
+          key={dog.id}
+          id={dog.id}
+          name={dog.name}
+          weight={dog.weight}
+          age={dog.age}
+          goodWithPuppies={dog.good_with_puppies}
+          breed={dog.breed}
+          />
+
+      )
+    })
+
     return(
       <div>
-        <UserShowTile
-          key={this.state.user.id}
-          id={this.state.user.id}
-          firstName={this.state.user.first_name}
-          lastName={this.state.user.last_name}
-          address={this.state.user.address}
-          city={this.state.user.city}
-          state={this.state.user.state}
-          zip={this.state.user.zip}
-          />
+        <div>
+          <UserShowTile
+            key={this.state.user.id}
+            id={this.state.user.id}
+            firstName={this.state.user.first_name}
+            lastName={this.state.user.last_name}
+            address={this.state.user.address}
+            city={this.state.user.city}
+            state={this.state.user.state}
+            zip={this.state.user.zip}
+            />
+        </div>
+        <div className="row">
+          {userDogs}
+        </div>
       </div>
 
     )
