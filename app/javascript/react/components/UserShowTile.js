@@ -12,6 +12,7 @@ const UserShowTile = (props) => {
       {props.city}<br />
       {props.state}<br/>
       {props.zip}<br/>
+    <div></div>
     </div>
   )
 }
