@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :address, :city, :state, :zip, :email, :user_dogs, :user_meetups
+  attributes :id, :first_name, :last_name, :address, :city, :state, :zip, :email, :profile_photo, :user_dogs, :user_meetups
 
   def user_dogs
     object.dogs

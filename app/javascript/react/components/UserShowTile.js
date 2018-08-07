@@ -16,6 +16,9 @@ const UserShowTile = (props) => {
       {props.state}<br/>
       <h4>Zip Code: </h4>
       {props.zip}<br/>
+      <div>
+        <img src={props.profilePhoto.url} />
+      </div>
     </div>
   )
 }
