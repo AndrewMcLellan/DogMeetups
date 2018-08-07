@@ -2,8 +2,6 @@ import React from 'react'
 
 
 const UserShowTile = (props) => {
-
-
   return(
     <div className="callout secondary">
       <h4>First Name:</h4>
@@ -18,7 +16,9 @@ const UserShowTile = (props) => {
       {props.state}<br/>
       <h4>Zip Code: </h4>
       {props.zip}<br/>
-    <div></div>
+      <div>
+        <img src={props.profilePhoto.url} />
+      </div>
     </div>
   )
 }

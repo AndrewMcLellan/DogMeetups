@@ -17,6 +17,7 @@ class UserShowContainer extends Component {
         city: "",
         state: "",
         zip: "",
+        profile_photo: ""
       },
       user_dogs: [],
       user_meetups: [],
@@ -26,7 +27,6 @@ class UserShowContainer extends Component {
   }
 
   handleDeleteMeetup(meetupId) {
-    debugger;
   fetch(`/api/v1/meetups/${meetupId}`, {
     credentials: 'same-origin',
     method: 'DELETE'
@@ -65,7 +65,6 @@ class UserShowContainer extends Component {
 
 
   render() {
-
 
     let userDogs = this.state.user_dogs.map(dog => {
       return(
@@ -110,6 +109,7 @@ class UserShowContainer extends Component {
             city={this.state.user.city}
             state={this.state.user.state}
             zip={this.state.user.zip}
+            profilePhoto={this.state.user.profile_photo}
             />
         </div>
         <div className="row">
