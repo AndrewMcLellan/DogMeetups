@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import UserShowTile from '../components/UserShowTile'
 import DogShowTile from '../components/DogShowTile'
+import MeetupShowTile from '../components/MeetupShowTile'
+import { browserHistory } from 'react-router'
 
 
 
@@ -16,10 +18,28 @@ class UserShowContainer extends Component {
         state: "",
         zip: "",
       },
-      user_dogs: []
-
+      user_dogs: [],
+      user_meetups: [],
+      meetups: [],
+      errors: []
     }
   }
+
+  handleDeleteMeetup(meetupId) {
+    debugger;
+  fetch(`/api/v1/meetups/${meetupId}`, {
+    credentials: 'same-origin',
+    method: 'DELETE'
+   })
+   .then(response => response.json())
+   .then( response => {
+     console.log(response)
+     this.setState({
+       errors: response.errors,
+       meetups: response.reviews
+     })
+   })
+ }
 
   componentDidMount() {
     fetch(`/api/v1/users/${this.props.params.id}`)
@@ -34,10 +54,10 @@ class UserShowContainer extends Component {
     })
     .then(response => response.json())
     .then(response => {
-      console.log(response)
       this.setState({
         user: response.user,
-        user_dogs: response.user.user_dogs
+        user_dogs: response.user.user_dogs,
+        user_meetups: response.user.user_meetups
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -62,6 +82,22 @@ class UserShowContainer extends Component {
       )
     })
 
+    let userMeetups = this.state.user_meetups.map(meetup => {
+      let handleDelete = () => {
+        this.handleDeleteMeetup(meetup.id)
+      }
+      return(
+        <MeetupShowTile
+          key={meetup.id}
+          id={meetup.id}
+          location={meetup.location}
+          date={meetup.date}
+          description={meetup.description}
+          handleDelete={handleDelete}
+          />
+      )
+    })
+
     return(
       <div>
         <div>
@@ -78,6 +114,9 @@ class UserShowContainer extends Component {
         </div>
         <div className="row">
           {userDogs}
+        </div>
+        <div className="row">
+          {userMeetups}
         </div>
       </div>
 
