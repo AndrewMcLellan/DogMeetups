@@ -1,0 +1,26 @@
+<h2>Sign up</h2>
+
+<%= form_for(@meetup) do |f| %>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location , autofocus: true, autocomplete: "location" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date, autocomplete: "date" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Meetup" %>
+  </div>
+<% end %>
+
+<% if !@errors.nil? %>
+<ul>
+  <% @errors.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ul>
+<% end %>

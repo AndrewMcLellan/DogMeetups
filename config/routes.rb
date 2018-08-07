@@ -5,10 +5,12 @@ Rails.application.routes.draw do
 
   resources :dogs
   resources :users
+  resources :meetups
 
   namespace :api do
     namespace :v1 do
-      resources :users 
+      resources :users
+      resources :meetups
     end
   end
 end

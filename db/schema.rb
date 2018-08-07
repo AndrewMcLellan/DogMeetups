@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_05_173432) do
+ActiveRecord::Schema.define(version: 2018_08_06_150647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2018_08_05_173432) do
     t.boolean "good_with_puppies"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_dogs_on_user_id"
+  end
+
+  create_table "meetups", force: :cascade do |t|
+    t.string "date", null: false
+    t.string "location", null: false
+    t.text "description", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_meetups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
