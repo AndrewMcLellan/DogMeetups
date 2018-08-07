@@ -18,5 +18,5 @@ class Dog < ApplicationRecord
   # validates :age,
   #   presence: true,
   #   inclusion: { in: AGE_RANGES.map { |age_range| age_range[1] } }
-  # belongs_to :user
+  belongs_to :user
 end
