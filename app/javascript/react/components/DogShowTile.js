@@ -2,7 +2,7 @@ import React from 'react'
 
 const DogShowTile = (props) => {
   return(
-    <div className="callout secondary columns small-4 large-6">
+    <div className="callout secondary columns small-4 medium-6">
       <h4>Dogs Name</h4>
       {props.name}
       <h4>Dog Age</h4>
