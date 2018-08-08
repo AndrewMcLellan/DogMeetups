@@ -1,9 +1,13 @@
 class MeetupsController < ApplicationController
+  include Geokit::Geocoders
   def new
     @meetup = Meetup.new
   end
 
   def show
+    @meetup = Meetup.find(params[:id])
+    geo_loc = MultiGeocoder.geocode(meetup_params[:location])
+    binding.pry
 
   end
 

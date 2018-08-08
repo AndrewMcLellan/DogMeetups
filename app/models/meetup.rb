@@ -8,6 +8,5 @@ class Meetup < ApplicationRecord
   has_many :dogs, through: :attendances
 
 
-  geocode :location
-  after_validation :geocode
+
 end
