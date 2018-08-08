@@ -1,5 +1,7 @@
 class MeetupSerializer < ActiveModel::Serializer
+
   attributes :id, :location, :user_id, :description, :creator_dogs, :creator 
+
 
 
   def creator
