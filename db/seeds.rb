@@ -16,3 +16,6 @@ Dog.create!(name: "Bobby", breed: "Sado", age: "9", weight: "30", good_with_pupp
 Dog.create!(name: "Nikki", breed: "Lab", age: "10", weight: "60", good_with_puppies: true, user_id: 2)
 
 Meetup.create!(location: "Boston", date: "9/19/18", description: "My dog has tons of energy and needs another dog to wear him out!", user_id: 1)
+Meetup.create!(location: "Medford", date: "9/19/18", description: "My dog has tons of energy and needs another dog to wear him out!", user_id: 1)
+Meetup.create!(location: "Cambridge", date: "9/19/18", description: "My dog has tons of energy and needs another dog to wear him out!", user_id: 1)
+Meetup.create!(location: "Somerville", date: "9/19/18", description: "My dog has tons of energy and needs another dog to wear him out!", user_id: 1)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MeetupTile from '../components/MeetupTile'
+import MeetupIndexTile from '../components/MeetupIndexTile'
 
 class MeetupsIndexContainer extends Component {
   constructor(props) {
@@ -31,18 +31,17 @@ class MeetupsIndexContainer extends Component {
   render() {
     let meetups = this.state.meetups.map(meetup => {
       return(
-        <MeetupTile
+        <MeetupIndexTile
           key={meetup.id}
           id={meetup.id}
           location={meetup.location}
           date={meetup.date}
           description={meetup.description}
           />
-
       )
     })
     return(
-      <div>
+      <div className="columns">
         {meetups}
       </div>
 
