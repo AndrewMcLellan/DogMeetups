@@ -1,7 +1,10 @@
 class MeetupsController < ApplicationController
-
   def new
     @meetup = Meetup.new
+  end
+
+  def show
+    
   end
 
   def create
@@ -14,6 +17,7 @@ class MeetupsController < ApplicationController
       render action: 'new'
     end
   end
+
 
   private
   def meetup_params
