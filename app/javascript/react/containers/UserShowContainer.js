@@ -99,7 +99,7 @@ class UserShowContainer extends Component {
 
     return(
       <div>
-        <div>
+        <div className="info-box">
           <UserShowTile
             key={this.state.user.id}
             id={this.state.user.id}
@@ -113,10 +113,12 @@ class UserShowContainer extends Component {
             />
         </div>
         <div className="row">
-          {userDogs}
-        </div>
-        <div className="row">
-          {userMeetups}
+          <div className="columns small-6 large-6">
+            {userDogs}
+          </div>
+          <div className="columns small-6 large-6">
+            {userMeetups}
+          </div>
         </div>
       </div>
 

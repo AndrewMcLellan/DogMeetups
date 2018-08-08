@@ -2,20 +2,15 @@ import React from 'react'
 
 const MeetupShowTile = (props) => {
   return(
-    <div className="callout secondary columns small-6 large-6">
-      <h4>Meetup Location</h4>
-      {props.location}
-      <h4>Meetup Date</h4>
-      {props.date}
-      <h4>Description:</h4>
-      {props.description}
-      <div>
-        <button
-          onClick={props.handleDelete}
-          >Delete Meetup
-        </button>
+
+      <div className="callout secondary" id="meetup-tile">
+        <h4>Meetup details</h4>
+        {props.location}
+        {props.date}
+        <div>
+        </div>
       </div>
-    </div>
+
   )
 
 }

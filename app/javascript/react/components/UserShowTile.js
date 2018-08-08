@@ -3,22 +3,17 @@ import React from 'react'
 
 const UserShowTile = (props) => {
   return(
-    <div className="callout secondary">
-      <div>
-        <img src={props.profilePhoto.url} />
+    <div className="callout secondary" id="user-tile">
+      <div className="row">
+        <div className="column small-3">
+          <img src={props.profilePhoto.url} />
+        </div>
+        <div className="column small-9">
+          <h4>First Name:</h4>
+          {props.firstName}<br />
+          {props.city}, {props.state}<br/>
+        </div>
       </div>
-      <h4>First Name:</h4>
-      {props.firstName}<br />
-      <h4>Last Name</h4>
-      {props.lastName}<br />
-      <h4>Address: </h4>
-      {props.address}<br />
-      <h4>City: </h4>
-      {props.city}<br />
-      <h4>State: </h4>
-      {props.state}<br/>
-      <h4>Zip Code: </h4>
-      {props.zip}<br/>
     </div>
   )
 }
