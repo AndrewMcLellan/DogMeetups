@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2018_08_07_201335) do
     t.string "date", null: false
     t.string "location", null: false
     t.text "description", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_meetups_on_user_id"
   end

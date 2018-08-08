@@ -4,7 +4,7 @@ class MeetupsController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def create
@@ -21,7 +21,7 @@ class MeetupsController < ApplicationController
 
   private
   def meetup_params
-    params.require(:meetup).permit(:location, :date)
+    params.require(:meetup).permit(:location, :date, :latitude, :longitude)
   end
 
 end

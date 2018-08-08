@@ -4,7 +4,9 @@ class CreateMeetups < ActiveRecord::Migration[5.2]
       t.string :date, null: false
       t.string :location, null: false
       t.text :description, null: false
-      
+      t.float :latitude
+      t.float :longitude
+
       t.belongs_to :user
     end
   end
