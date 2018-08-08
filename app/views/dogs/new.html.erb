@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= f.label :age %><br />
-    <%= f.text_field :age %>
+    <%= f.collection_select(:age, @age_collection, :last, :first, { include_blank: true }) %>
   </div>
 
   <div class="field">
@@ -24,7 +24,7 @@
 
   <div class="field">
     <%= f.label :good_with_puppies %>
-    <%= f.text_field :good_with_puppies %>
+    <%= f.collection_select(:good_with_puppies, @boolean_collection, :first, :last) %>
   </div>
 
 
