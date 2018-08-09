@@ -11,15 +11,17 @@
 </head>
 <body>
 
-<div class="">
-  <nav class="snip1189 nav-bar">
+<div class="" id="nav-bar">
+  <nav class="snip1189 nav-bar" id="nav-bar">
     <ul class="title-area">
       <div class="columns small-9">
+
         <li class="name">
-          <h4 className="columns small-3"><a href="/">Home</a></h4>
+          <h4 className="columns small-3" id="nav-bar"><a href="/">Home</a></h4>
         </li class="name">
-        <li>
-          <h4 className="columns small-3">
+
+        <li >
+          <h4 className="columns small-3" id="nav-bar">
             <% if current_user %>
             <%= link_to 'Your Profile', user_path(current_user.id) %>
             <% else %>
@@ -27,11 +29,13 @@
             <% end %>
           </h4>
         </li>
+
         <li>
-          <h4 className="columns small-3"><a href="/">DogMeetups</a></h4>
+          <h4 className="columns small-3" id="nav-bar"><a href="/">DogMeetups</a></h4>
         </li>
+
         <li>
-          <h4 className="columns small-3"><a href="/">More Info</a></h4>
+          <h4 className="columns small-3" id="nav-bar"><a href="/">More Info</a></h4>
         </li>
       </div>
       <div class="columns small-3">

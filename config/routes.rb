@@ -5,12 +5,16 @@ Rails.application.routes.draw do
 
   resources :dogs
   resources :users
-  resources :meetups
+  resources :meetups do
+    resources :attendances
+  end
 
   namespace :api do
     namespace :v1 do
       resources :users
-      resources :meetups
+      resources :meetups do
+        resources :attendances
+      end
     end
   end
 end

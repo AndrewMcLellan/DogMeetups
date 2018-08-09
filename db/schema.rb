@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_08_08_154331) do
     t.string "breed", null: false
     t.string "age", null: false
     t.string "weight", null: false
+    t.string "dog_photo"
     t.string "energy"
     t.boolean "good_with_puppies"
     t.bigint "user_id"
