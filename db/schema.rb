@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_08_154331) do
+ActiveRecord::Schema.define(version: 2018_08_07_201335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2018_08_08_154331) do
     t.string "location", null: false
     t.text "description", null: false
     t.bigint "user_id"
-    t.integer "creator_id", null: false
     t.index ["user_id"], name: "index_meetups_on_user_id"
   end
 
