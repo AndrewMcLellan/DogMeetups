@@ -16,6 +16,10 @@
 
  */
 
+ @import url('https://fonts.googleapis.com/css?family=Aladin');
+ @import url('https://fonts.googleapis.com/css?family=Aladin|Rammetto+One');
+
+
 body {
   background-image: url("https://i.imgur.com/cIcAvU8.jpg");
   background-size: 1500px 960px;
@@ -23,7 +27,6 @@ body {
 }
 .MeetupIndexTile {
  margin: auto;
- padding: 5%;
 
 }
 
@@ -31,6 +34,10 @@ body {
   border-width: 3px;
   border-color: white;
   background-color: rgba(217, 202, 192, .65);
+}
+
+#nav-bar {
+  font-family: 'Rammetto One', cursive;
 }
 
 .info-box {

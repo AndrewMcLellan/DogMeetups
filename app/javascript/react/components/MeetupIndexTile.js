@@ -3,12 +3,22 @@ import React from 'react'
 const MeetupIndexTile = (props) => {
 
   return(
-    <div className="MeetupIndexTile row secondary small-6">
-      <h3></h3>
+    <div className="MeetupIndexTile callout secondary small-6">
+      <h3>
+
+        <a href="/meetups/1">{props.description}</a>
+      </h3>
       {props.location}
       {props.date}
-      {props.description}
+      <br />
+      <br />
+      <h3>
+        <div>
+          <button className="hover">Hello</button>
+        </div>
+      </h3>
     </div>
+
   )
 }
 

@@ -12,7 +12,10 @@ const App = (props) => {
           <Route path='/users' />
           <Route path='/users/:id' component={UserShowContainer} />
           <Route path='/meetups' component={MeetupsIndexContainer} />
-          <Route path='/meetups/:id' component={MeetupShowContainer} />
+          <Route path='/meetups/:id'>
+            <IndexRoute component={MeetupShowContainer}/>
+            <Route path='/meetups/:id/attendances/new' component={MeetupShowContainer}/>
+          </Route>
         </Route>
       </Router>
     </div>

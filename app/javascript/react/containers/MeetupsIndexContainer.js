@@ -23,7 +23,7 @@ class MeetupsIndexContainer extends Component {
     .then(response => response.json())
     .then(response => {
       this.setState({
-        meetups: response
+        meetups: response.meetups
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
