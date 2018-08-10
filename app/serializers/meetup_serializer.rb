@@ -12,5 +12,5 @@ class MeetupSerializer < ActiveModel::Serializer
     object.user.dogs
   end
 
-  def dog_names
+  def
 end

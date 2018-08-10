@@ -47,7 +47,7 @@ class MeetupsIndexContainer extends Component {
       debugger
       return(
         <MeetupIndexTile
-          key={dog.}
+          key={dog.name}
           />
       )
     })

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const MeetupIndexTile = (props) => {
-  debugger
+  
   return(
     <div>
       <div className="MeetupIndexTile callout secondary small-6">
