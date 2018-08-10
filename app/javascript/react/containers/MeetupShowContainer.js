@@ -61,7 +61,6 @@ class MeetupShowContainer extends Component {
   }
 
 
-
   render() {
     return(
       <div>
@@ -70,6 +69,8 @@ class MeetupShowContainer extends Component {
           creator={this.state.meetup.creator}
           description={this.state.meetup.description}
           creatorDogs={this.state.meetup.creator_dogs}
+          lat={this.state.meetup.lat}
+          lng={this.state.meetup.lng}
           handleSubmit={this.handleSubmit}
           />
       </div>
