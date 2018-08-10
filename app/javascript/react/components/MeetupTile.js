@@ -1,4 +1,5 @@
 import React from 'react'
+import MapContainer from '../containers/MapContainer'
 
 const MeetupTile = (props) => {
   return(
@@ -6,6 +7,12 @@ const MeetupTile = (props) => {
       {props.creator}
       <br />
       {props.location}
+      <div>
+        <MapContainer
+          latitude={props.lat}
+          longitude={props.lng}
+          />
+      </div>
       <br />
       {props.description}
         <div>
