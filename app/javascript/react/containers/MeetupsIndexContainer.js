@@ -22,7 +22,6 @@ class MeetupsIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(response => {
-      console.log(response)
       this.setState({
         meetups: response.meetups
       })
@@ -31,7 +30,6 @@ class MeetupsIndexContainer extends Component {
   }
   render() {
     let meetups = this.state.meetups.map(meetup => {
-
       return(
         <MeetupIndexTile
           key={meetup.id}
@@ -40,17 +38,11 @@ class MeetupsIndexContainer extends Component {
           date={meetup.date}
           description={meetup.description}
           creatorDogs={meetup.creator_dogs}
+          attendees={meetup.meetup_attendees}
           />
       )
     })
-    let creatorDogs = this.state.meetups.creator_dogs.map(dog => {
-      debugger
-      return(
-        <MeetupIndexTile
-          key={dog.name}
-          />
-      )
-    })
+
     return(
       <div className="columns">
         {meetups}

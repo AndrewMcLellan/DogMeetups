@@ -9,5 +9,6 @@ class UserSerializer < ActiveModel::Serializer
     object.meetups
   end
 
+  
 
 end

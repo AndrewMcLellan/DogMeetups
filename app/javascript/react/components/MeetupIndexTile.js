@@ -1,7 +1,22 @@
 import React from 'react'
 
+
 const MeetupIndexTile = (props) => {
-  
+  let creatordogNames = props.creatorDogs.map(dog => {
+    return(
+      <div>
+        {dog.name}
+      </div>
+    )
+  })
+  let attendees = props.attendees.map(attendee => {
+    return(
+      <div>
+        {attendee.name}
+      </div>
+    )
+  })
+
   return(
     <div>
       <div className="MeetupIndexTile callout secondary small-6">
@@ -18,6 +33,15 @@ const MeetupIndexTile = (props) => {
           </div>
           <div>
             {props.creatorDogs.name}
+          </div>
+
+          <div>
+            <h4>Host Dogs</h4>
+            {creatordogNames}
+          </div>
+          <div>
+            <h4>Guest Dogs:</h4>
+            {attendees}
           </div>
         </div>
         <br />
