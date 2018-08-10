@@ -4,23 +4,25 @@ class MapContainer extends Component {
   constructor(props) {
     super(props);
 
+
   }
+
 
   componentDidMount() {
     window.initMap = this.initMap;
-    loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyAHEwmfEgNVYI7-_F2MkyYFHg0ybzcyxxUcallback=initMap');
+    loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyDkM_s3tnT3D0afumdd74ebSJoeF3r42Dw&callback=initMap');
   }
 
   initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
-      center: {lat: this.props.lat, lng: this.props.lng}
+      center: {lat: 42.3611, lng: -71.0570}
     })
   }
   render() {
     return(
       <div>
-        <div id="map" style={{height: '500px', width: '500px'}}></div>
+        <div id="map" style={{height: '300px', width: '300px'}}></div>
       </div>
     )
   }
