@@ -63,3 +63,4 @@ gem "active_model_serializers"
 gem "carrierwave"
 gem "mini_magick"
 gem 'geokit-rails'
+gem 'mail'

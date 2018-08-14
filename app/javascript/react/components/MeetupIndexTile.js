@@ -1,27 +1,17 @@
 import React from 'react'
-
+import SearchBarContainer from '../containers/SearchBarContainer'
 
 const MeetupIndexTile = (props) => {
-  let creatordogNames = props.creatorDogs.map(dog => {
-    return(
-      <div>
-        {dog.name}
-      </div>
-    )
-  })
-  let attendees = props.attendees.map(attendee => {
-    return(
-      <div>
-        {attendee.name}
-      </div>
-    )
-  })
+
+  let url = `meeups/${props.id}`
 
   return(
     <div>
-      <div className="MeetupIndexTile callout secondary small-6">
+      <div className="MeetupIndexTile callout secondary">
+
+        <br />
         <h3 className="callout meetup-index-topbar">
-          <a href="/meetups/1">{props.description}</a>
+          <a href={'/meetups/' + props.id}>{props.description}</a>
         </h3>
         <div className="small-2">
           <div className="callout row">
@@ -33,15 +23,6 @@ const MeetupIndexTile = (props) => {
           </div>
           <div>
             {props.creatorDogs.name}
-          </div>
-
-          <div>
-            <h4>Host Dogs</h4>
-            {creatordogNames}
-          </div>
-          <div>
-            <h4>Guest Dogs:</h4>
-            {attendees}
           </div>
         </div>
         <br />

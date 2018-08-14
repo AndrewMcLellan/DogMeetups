@@ -1,5 +1,5 @@
 class Meetup < ApplicationRecord
-  validates :date, :location, presence: true
+  validates :date, :location, :time, presence: true
 
 
   belongs_to :user
@@ -16,4 +16,9 @@ class Meetup < ApplicationRecord
     str = url.read
     data = JSON.parse(str)
   end
+
+  # def near_user
+  #   @user_location = current_user.geolocate
+  #   Meetup.within(5, origin: => @user_location)
+  # end
 end

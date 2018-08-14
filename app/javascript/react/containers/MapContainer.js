@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class MapContainer extends Component {
   constructor(props) {
     super(props);
@@ -10,16 +11,22 @@ class MapContainer extends Component {
 
   componentDidMount() {
     window.initMap = this.initMap;
-    loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyDkM_s3tnT3D0afumdd74ebSJoeF3r42Dw&callback=initMap');
+    loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyDkM_s3tnT3D0afumdd74ebSJoeF3r42Dw');
   }
 
   initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
-      center: {lat: 42.3611, lng: -71.0570}
+      center: {lat: this.props.latitude, lng: this.props.longitude}
     })
   }
   render() {
+    if(this.props.latitude){
+      window.initMap = this.initMap()
+    }
+
+    console.log("mapcontainer");
+    console.log(this.props);
     return(
       <div>
         <div id="map" style={{height: '300px', width: '300px'}}></div>

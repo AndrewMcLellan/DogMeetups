@@ -1,0 +1,52 @@
+
+<h2 class="new-dog" id="new-dog-title">Edit Your Dogs Profile!</h2>
+
+<div class="callout secondary" id="new-dog">
+  <%= form_for(@dog) do |f| %>
+
+  <div class="field" id="field-text">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field" id="field-text">
+    <%= f.label :breed %><br />
+    <%= f.text_field :breed, autocomplete: "breed" %>
+  </div>
+
+  <div class="field" id="field-text">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight, autocomplete: "weight" %>
+  </div>
+
+  <div class="field" id="field-text">
+    <%= f.label :age %><br />
+    <%= f.collection_select(:age, @age_collection, :last, :first, { include_blank: true }) %>
+  </div>
+
+
+  <div class="field" id="field-text">
+    <%= f.label :good_with_puppies %>
+    <%= f.collection_select(:good_with_puppies, @boolean_collection, :first, :last) %>
+  </div>
+
+  <div class="field" id="field-text">
+    <%= f.label :dog_photo %>
+    <%= f.file_field :dog_photo %>
+  </div>
+
+  <p><%= link_to "Remove Dogs Profile", users_path(current_user.id), method: :delete, data: { confirm: "are you sure?" } %></p>
+
+  <div class="actions" id="field-text">
+    <%= f.submit "Add Dog" %>
+  </div>
+  <% end %>
+</div>
+
+<% if !@errors.nil? %>
+<ul>
+  <% @errors.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ul>
+<% end %>

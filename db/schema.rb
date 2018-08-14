@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_08_09_171840) do
     t.string "breed", null: false
     t.string "age", null: false
     t.string "weight", null: false
-    t.string "dog_photo"
+    t.string "dog_photo", default: "https://www.petmd.com/sites/default/files/salmonella-infection-dogs.jpg", null: false
     t.string "energy"
     t.boolean "good_with_puppies"
     t.bigint "user_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_08_09_171840) do
     t.string "date", null: false
     t.string "location", null: false
     t.text "description", null: false
+    t.string "time", null: false
     t.bigint "user_id"
     t.float "lat", null: false
     t.float "lng", null: false
@@ -53,6 +54,8 @@ ActiveRecord::Schema.define(version: 2018_08_09_171840) do
     t.string "city", null: false
     t.string "state", null: false
     t.string "zip", null: false
+    t.string "lat"
+    t.string "lng"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

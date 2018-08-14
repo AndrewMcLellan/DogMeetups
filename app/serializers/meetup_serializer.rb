@@ -1,11 +1,11 @@
 class MeetupSerializer < ActiveModel::Serializer
 
-  attributes :id, :location, :user_id, :description, :creator_dogs, :creator, :lat, :lng, :date, :meetup_attendees
+  attributes :id, :location, :user_id, :description, :creator_dogs, :creator, :lat, :lng, :date, :time, :meetup_attendees
 
 
 
   def creator
-    object.user.first_name
+    object.user.full_name
   end
 
   def creator_dogs
@@ -13,7 +13,6 @@ class MeetupSerializer < ActiveModel::Serializer
   end
 
   def meetup_attendees
-
     dogNames = []
     object.attendances.each do |attendee|
 

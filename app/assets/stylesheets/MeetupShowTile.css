@@ -1,0 +1,52 @@
+
+.meetup-show-infobox {
+  box-shadow: 10px 10px 25px grey;
+}
+
+#meetup-show-infobox {
+
+}
+
+#map {
+  box-shadow:10px 10px 25px grey;
+}
+#map-rsvp {
+  padding-top: 10px;
+
+}
+
+#rsvp-button {
+  margin-left: 38%;
+
+}
+
+#button-background  {
+  background-color: rgb(78,94,213);
+}
+
+#attending-dogs {
+  box-shadow: 10px 10px 25px grey;
+  margin-top: 25px;
+  border-radius: 8px;
+  border: 2px solid rgba(61,104,68,.75);
+
+}
+
+#meetup_show_tile {
+  background-color: rgba(217, 202, 192, .85);
+}
+
+.dog-photo {
+  height: 100px;
+  width: 150px;
+}
+
+#attendee-dog-photo {
+  height: 100px;
+  width: 100px;
+
+  list-style: none;
+  margin-top: 3px;
+  padding: 1px;
+
+}

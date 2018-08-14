@@ -17,7 +17,8 @@ class ApplicationController < ActionController::Base
       :state,
       :zip,
       :user_id,
-      :profile_photo
+      :profile_photo,
+      :dog_photo
       ])
  end
 end

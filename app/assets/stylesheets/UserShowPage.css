@@ -1,0 +1,23 @@
+.profile-photo {
+  height: 100px;
+  width: 150px;
+}
+
+#user-page {
+  margin-left: 45%;
+  border-radius: 5%;
+  background-color: rgba(217, 202, 192, .65)
+}
+
+#text {
+  font-family: 'Rammetto One', cursive;
+}
+
+#text h5 {
+  font-family: 'Rammetto One', cursive;
+}
+
+.outline {
+  border: 2px solid black;
+  padding: 1px
+}

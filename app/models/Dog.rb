@@ -14,6 +14,8 @@ class Dog < ApplicationRecord
     [false, "No"]
   ]
 
+  mount_uploader :dog_photo, DogPhotoUploader
+
   validates :name, :breed, :weight, presence: true
   # validates :age,
   #   presence: true,

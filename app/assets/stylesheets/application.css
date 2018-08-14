@@ -42,26 +42,25 @@ body {
 
 .info-box {
   padding: 20px;
+  margin-left: 14%;
+
 }
 #user-tile {
-  background-color: rgba(217, 202, 192, .65);
+  /* background-color: rgba(217, 202, 192, .65); */
   opacity: 50%;
   margin-right: 20%;
-  margin-left: 20%;
+  margin-left: 9%;
 }
 
 #dog-tile {
-  background-color: rgba(217, 202, 192, .85);
+  /* background-color: rgba(217, 202, 192, .85); */
 
 }
 
 #meetup-tile {
-  background-color: rgba(217, 202, 192, .85);
+  /* background-color: rgba(217, 202, 192, .85); */
 }
 
-#meetup_show_tile {
-  background-color: rgba(217, 202, 192, .85);
-}
 .meetup_show_tile{
   margin-left: 47%;
   margin-right: 3%;
@@ -69,17 +68,18 @@ body {
 }
 
 button {
-  display: inline-block;
-  position: relative;
-  padding: 20px 38px;
+  /* display: inline-block; */
+  /* position: relative; */
+  padding: 20px 33px;
+  margin-top: 17px;
   top: 0;
   font-size: 30px;
   font-family: "Open Sans", Helvetica;
   border-radius: 4px;
   border-bottom: 1px solid rgba( 28, 227, 125, 0.5 );
-  background: rgba( 22, 230, 137, 1 );
+  background-color: rgb(78,94,213);
   color: #fff;
-  box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
+  box-shadow: 10px 0px 0px rgba( 15, 165, 60, 0.1 );
 
   -webkit-transform: translateZ(0);
      -moz-transform: translateZ(0);
