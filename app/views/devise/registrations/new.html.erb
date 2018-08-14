@@ -10,53 +10,53 @@
     <div class="columns small-6 field">
       <h4 id="field-text">
         <%= f.label :first_name %>
+        <%= f.text_field :first_name%>
       </h4>
-      <%= f.text_field :first_name%>
     </div>
 
     <div class="columns small-6">
       <h4 id="field-text">
         <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
       </h4>
-      <%= f.text_field :last_name %>
     </div>
   </div>
 
   <div class="field columns">
     <h4 id="field-text">
       <%= f.label :address %>
+      <%= f.text_field :address %>
     </h4>
-    <%= f.text_field :address %>
   </div>
 
   <div class="row">
     <div class="field columns small-4">
       <h4 id="field-text">
         <%= f.label :city %>
+        <%= f.text_field :city %>
       </h4>
-      <%= f.text_field :city %>
     </div>
 
     <div class="field columns small-4">
       <h4 id="field-text">
         <%= f.label :state %>
+        <%= f.text_field :state %>
       </h4>
-      <%= f.text_field :state %>
     </div>
 
     <div class="field columns small-4">
       <h4 id="field-text">
         <%= f.label :zip %>
+        <%= f.text_field :zip %>
       </h4>
-      <%= f.text_field :zip %>
     </div>
   </div>
 
   <div class="field columns">
     <h4 id="field-text">
       <%= f.label :email %>
+      <%= f.email_field :email %>
     </h4>
-    <%= f.email_field :email %>
   </div>
 
 
@@ -73,17 +73,17 @@
   <div class="field columns">
     <h4 id="field-text">
       <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </h4>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field columns">
     <h4 id="field-text">
       <%= f.label :profile_photo %>
+      <%= f.file_field :profile_photo %>
     </h4>
-    <%= f.file_field :profile_photo %>
   </div>
-  
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

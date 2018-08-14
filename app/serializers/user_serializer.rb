@@ -8,7 +8,6 @@ class UserSerializer < ActiveModel::Serializer
   def user_meetups
     object.meetups
   end
-
   
 
 end

@@ -1,20 +1,27 @@
 import React from 'react'
 
 const DogShowTile = (props) => {
+
+  let dogPhoto;
+  if (props.dogPhoto) {
+    dogPhoto = <img className="dog-photo" src={props.dogPhoto}></img>
+  }
   return(
 
-      <div className="callout secondary" id="dog-tile">
-        <h4>Dogs Name</h4>
+      <div className="callout primary" id="dog-tile">
+        <div>
+        {dogPhoto}
+        </div>
         {props.name}
-        <h4>Dog Age</h4>
-        {props.age}
-        <h4>Weight</h4>
+        {props.age} <br/>
         {props.weight} lbs
-        <h4>Good With Puppies?</h4>
-        {props.goodWithPuppies}
         <h4>Dog Breed</h4>
         {props.breed}
+        <div>
+          <a href={"/dogs/" + props.id + "/edit"}>Edit Dogs Profile</a>
+        </div>
       </div>
+
 
   )
 }

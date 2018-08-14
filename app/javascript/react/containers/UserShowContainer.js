@@ -54,6 +54,7 @@ class UserShowContainer extends Component {
     })
     .then(response => response.json())
     .then(response => {
+      console.log(response)
       this.setState({
         user: response.user,
         user_dogs: response.user.user_dogs,
@@ -65,7 +66,6 @@ class UserShowContainer extends Component {
 
 
   render() {
-
     let userDogs = this.state.user_dogs.map(dog => {
       return(
         <DogShowTile
@@ -76,6 +76,7 @@ class UserShowContainer extends Component {
           age={dog.age}
           goodWithPuppies={dog.good_with_puppies}
           breed={dog.breed}
+          dogPhoto={dog.dog_photo.url}
           />
 
       )
@@ -92,14 +93,15 @@ class UserShowContainer extends Component {
           location={meetup.location}
           date={meetup.date}
           description={meetup.description}
+          time={meetup.time}
           handleDelete={handleDelete}
           />
       )
     })
 
     return(
-      <div>
-        <div className="info-box">
+      <div className="callout small-6" id="user-page">
+        <div className="row info-box">
           <UserShowTile
             key={this.state.user.id}
             id={this.state.user.id}
@@ -114,9 +116,11 @@ class UserShowContainer extends Component {
         </div>
         <div className="row">
           <div className="columns small-6 large-6">
+            <h4>Your Dogs:</h4>
             {userDogs}
           </div>
           <div className="columns small-6 large-6">
+            <h4>Your Meetups:</h4>
             {userMeetups}
           </div>
         </div>
