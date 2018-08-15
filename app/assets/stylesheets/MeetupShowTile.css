@@ -26,6 +26,7 @@
 
 #attending-dogs {
   box-shadow: 10px 10px 25px grey;
+  margin: auto;
   margin-top: 25px;
   border-radius: 8px;
   border: 2px solid rgba(61,104,68,.75);

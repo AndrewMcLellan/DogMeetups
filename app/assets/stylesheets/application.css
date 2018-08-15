@@ -62,9 +62,9 @@ body {
 }
 
 .meetup_show_tile{
-  margin-left: 47%;
-  margin-right: 3%;
-  border-radius: 3%;
+  margin: auto;
+  /* margin-right: 3%;
+  border-radius: 3%; */
 }
 
 button {

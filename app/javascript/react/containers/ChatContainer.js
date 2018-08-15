@@ -18,7 +18,7 @@ class ChatContainer extends Component {
   }
 
   componentDidMount() {
-  
+
     fetch('/api/v1/users', {
       credentials: 'same-origin',
       method: 'GET',
@@ -94,8 +94,8 @@ class ChatContainer extends Component {
     }, this);
 
     return(
-      <div>
-        <div className='callout chat' id='chatWindow'>
+      <div className="row">
+        <div className='small-6 callout chat' id='chatWindow'>
           {messages}
         </div>
         <form onSubmit={this.handleFormSubmit}>
