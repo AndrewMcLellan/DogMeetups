@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: <%= ENV.fetch("https://git.heroku.com/fierce-savannah-78648.git") { "redis://localhost:6379/1" } %>
   channel_prefix: Dog-Meetups_production
