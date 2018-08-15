@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_09_171840) do
+ActiveRecord::Schema.define(version: 2018_08_14_222218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 2018_08_09_171840) do
     t.bigint "meetup_id"
     t.index ["dog_id"], name: "index_attendances_on_dog_id"
     t.index ["meetup_id"], name: "index_attendances_on_meetup_id"
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
   end
 
   create_table "dogs", force: :cascade do |t|
@@ -43,6 +48,16 @@ ActiveRecord::Schema.define(version: 2018_08_09_171840) do
     t.float "lat", null: false
     t.float "lng", null: false
     t.index ["user_id"], name: "index_meetups_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "body", null: false
+    t.bigint "user_id"
+    t.bigint "chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
