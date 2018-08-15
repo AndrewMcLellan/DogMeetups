@@ -66,3 +66,4 @@ gem "mini_magick"
 gem 'geokit-rails'
 gem 'mail'
 gem 'fog'
+gem 'fog-aws'
