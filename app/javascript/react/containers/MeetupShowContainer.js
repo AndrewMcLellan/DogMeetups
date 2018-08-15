@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withGoogleMap, GoogleMap } from 'react-google-maps';
 import MeetupTile from '../components/MeetupTile'
 import { browserHistory } from 'react-router'
+import ChatContainer from './ChatContainer'
 
 class MeetupShowContainer extends Component {
   constructor(props) {
@@ -34,7 +35,6 @@ class MeetupShowContainer extends Component {
     })
     .then(response => response.json())
     .then(response => {
-
       let currentAttendees = this.state.attendees
       let newAttendees = currentAttendees.concat(response.attendee)
 
@@ -61,7 +61,6 @@ class MeetupShowContainer extends Component {
     })
     .then(response => response.json())
     .then(response => {
-      console.log(response)
       this.setState({
         meetup: response.meetup,
         attendees: response.meetup.meetup_attendees
@@ -74,19 +73,23 @@ class MeetupShowContainer extends Component {
   render() {
     return(
       <div>
-        <MeetupTile
-          key={this.state.meetup.id}
-          id={this.state.meetup.id}
-          location={this.state.meetup.location}
-          creator={this.state.meetup.creator}
-          description={this.state.meetup.description}
-          creatorDogs={this.state.meetup.creator_dogs}
-          lat={this.state.meetup.lat}
-          lng={this.state.meetup.lng}
-          handleSubmit={this.handleSubmit}
-          creatorDogs={this.state.meetup.creator_dogs}
-          attendees={this.state.attendees}
-          time={this.state.meetup.time}
+        <div>
+          <MeetupTile
+            key={this.state.meetup.id}
+            id={this.state.meetup.id}
+            location={this.state.meetup.location}
+            creator={this.state.meetup.creator}
+            description={this.state.meetup.description}
+            creatorDogs={this.state.meetup.creator_dogs}
+            lat={this.state.meetup.lat}
+            lng={this.state.meetup.lng}
+            handleSubmit={this.handleSubmit}
+            creatorDogs={this.state.meetup.creator_dogs}
+            attendees={this.state.attendees}
+            time={this.state.meetup.time}
+            />
+        </div>
+        <ChatContainer
           />
       </div>
     )
