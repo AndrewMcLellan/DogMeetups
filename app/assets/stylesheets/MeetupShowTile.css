@@ -33,6 +33,7 @@
   margin-top: 25px;
   border-radius: 8px;
   border: 2px solid rgba(61,104,68,.75);
+  display: inline-block;
 
 }
 
@@ -52,5 +53,8 @@
   list-style: none;
   margin-top: 3px;
   padding: 1px;
+}
 
+.meetup-text-box {
+  display: inline-block;
 }

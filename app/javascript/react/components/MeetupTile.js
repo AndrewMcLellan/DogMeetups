@@ -74,7 +74,7 @@ const MeetupTile = (props) => {
         <div className=" row callout meetup-show-infobox" id="meetup_show_infobox">
 
           <div className="row">
-            <div className="columns small-4" id="text">
+            <div className="meetup-text-box small-4" id="text">
               <div>
                 <h5>Meetup Creator:</h5>
                 <a href={"/users/" + props.id}>{props.creator}</a>
@@ -88,7 +88,7 @@ const MeetupTile = (props) => {
                 {props.description}
               </div>
             </div>
-            <div className="columns small-4" id="map-div">
+            <div className="columns small-5" id="map-div">
               Location: <br/>
               {props.location}
               {map}
@@ -96,13 +96,13 @@ const MeetupTile = (props) => {
           </div>
         </div>
         <div className="meetup-dogs-info" id="meetup-dogs-info">
-          <div className="callout primary columns small-5" id="attending-dogs">
+          <div className="callout primary small-5" id="attending-dogs">
             <h4>Hosting Dogs: </h4>
             <div className="small-6">
               {creatorDogsPhoto}
             </div>
           </div>
-          <div className="callout primary columns small-5" id="attending-dogs">
+          <div className="callout primary small-5" id="attending-dogs">
             <h4>Attending Dogs: </h4>
             <ul>
               <div className="small-10">
