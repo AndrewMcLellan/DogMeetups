@@ -20,8 +20,6 @@ class MeetupShowContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-
-
   handleSubmit(event) {
     event.preventDefault()
     let formPayload = this.state.attendances
