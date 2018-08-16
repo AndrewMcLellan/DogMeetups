@@ -22,7 +22,8 @@
 
 body {
   background-image: url("https://i.imgur.com/cIcAvU8.jpg");
-  background-size: 1500px 960px;
+  /* background-size: 1500px 960px; */
+  background-size: cover;
   background-attachment: fixed;
 }
 .MeetupIndexTile {
