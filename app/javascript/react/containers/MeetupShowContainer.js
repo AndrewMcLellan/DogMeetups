@@ -9,11 +9,18 @@ class MeetupShowContainer extends Component {
     super(props);
     this.state = {
       meetup: {},
-      attendees: []
+      attendees: [],
+      finalAttendeeNames: [],
+      currentUser: {},
+      error: '',
+      joinError: '',
+
 
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+
 
   handleSubmit(event) {
     event.preventDefault()
@@ -35,13 +42,35 @@ class MeetupShowContainer extends Component {
     })
     .then(response => response.json())
     .then(response => {
+      let newAttendees;
       let currentAttendees = this.state.attendees
-      let newAttendees = currentAttendees.concat(response.attendee)
+      let currentAttendeesNames = this.state.finalAttendeeNames
+      let error2;
+      let error3;
+      let attendeeNames = []
+      let newAttendeeNames = []
 
-      // let newAttendee = currentAttendees.concet(response.attendee)
-      this.setState({
-        attendees: newAttendees
-      })
+
+      if (this.state.meetup.user_id != this.state.currentUser.id && !this.state.finalAttendeeNames.includes(response.attendee.name)) {
+        newAttendees = currentAttendees.concat(response.attendee)
+        newAttendeeNames = currentAttendeesNames.concat(response.attendee.name)
+        error2 = ""
+        this.setState({
+          attendees: newAttendees,
+          finalAttendeeNames: newAttendeeNames
+        })
+      } else if (this.state.meetup.user_id == this.state.currentUser.id) {
+        newAttendees = currentAttendees
+        error2 = "you cannot join a meetup you own"
+        this.setState({
+          joinError: error2
+        })
+      } else {
+        error3 = "you have already joined this meetup"
+        this.setState({
+          joinError: error3
+        })
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -61,9 +90,15 @@ class MeetupShowContainer extends Component {
     })
     .then(response => response.json())
     .then(response => {
+      let attendeeNames = []
+      response.meetup.meetup_attendees.forEach((attendee) => {
+        attendeeNames.push(attendee.name)
+      })
       this.setState({
         meetup: response.meetup,
-        attendees: response.meetup.meetup_attendees
+        attendees: response.meetup.meetup_attendees,
+        currentUser: response.meetup.current_user,
+        finalAttendeeNames: attendeeNames
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -87,6 +122,9 @@ class MeetupShowContainer extends Component {
             creatorDogs={this.state.meetup.creator_dogs}
             attendees={this.state.attendees}
             time={this.state.meetup.time}
+            currentUser={this.state.currentUser}
+            joinError={this.state.joinError}
+            finalAttendeeNames={this.state.finalAttendeeNames}
             />
         </div>
         <ChatContainer
