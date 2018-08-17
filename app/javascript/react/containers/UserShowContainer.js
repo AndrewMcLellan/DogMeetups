@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UserShowTile from '../components/UserShowTile'
 import DogShowTile from '../components/DogShowTile'
 import MeetupShowTile from '../components/MeetupShowTile'
+import AttendingMeetupsComponent from '../components/AttendingMeetupsComponent'
 import { browserHistory } from 'react-router'
 
 
@@ -22,7 +23,8 @@ class UserShowContainer extends Component {
       user_dogs: [],
       user_meetups: [],
       meetups: [],
-      errors: []
+      errors: [],
+      attendances: []
     }
   }
 
@@ -33,7 +35,6 @@ class UserShowContainer extends Component {
    })
    .then(response => response.json())
    .then( response => {
-     console.log(response)
      this.setState({
        errors: response.errors,
        meetups: response.reviews
@@ -58,7 +59,8 @@ class UserShowContainer extends Component {
       this.setState({
         user: response.user,
         user_dogs: response.user.user_dogs,
-        user_meetups: response.user.user_meetups
+        user_meetups: response.user.user_meetups,
+        attendances: response.user.user_attendances
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -99,9 +101,17 @@ class UserShowContainer extends Component {
       )
     })
 
+    let userAtteendances = this.state.attendances.map(attendance => {
+      return(
+        <AttendingMeetupsComponent
+          attendance={attendance}
+          />
+      )
+    })
+
     return(
-      <div className="callout small-6" id="user-page">
-        <div className="row info-box">
+      <div className="callout small-10" id="user-page">
+        <div className="row">
           <UserShowTile
             key={this.state.user.id}
             id={this.state.user.id}
@@ -114,14 +124,20 @@ class UserShowContainer extends Component {
             profilePhoto={this.state.user.profile_photo}
             />
         </div>
-        <div className="row">
-          <div className="columns small-6 large-6">
+        <div className="">
+          <div className="row" id="dog-tile">
             <h4>Your Dogs:</h4>
             {userDogs}
           </div>
+        </div>
+        <div className="row">
           <div className="columns small-6 large-6">
             <h4>Your Meetups:</h4>
             {userMeetups}
+          </div>
+          <div className="columns small-6">
+            <h4>Meetups You Are Attending: </h4>
+            {userAtteendances}
           </div>
         </div>
       </div>

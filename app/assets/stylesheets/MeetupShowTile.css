@@ -1,13 +1,40 @@
 
 .meetup-show-infobox {
   box-shadow: 10px 10px 25px grey;
+  padding: 0%;
+}
+
+.edit-link {
+    font-size: 15px;
+}
+
+.edit-link-div {
+  margin-top: 2em;
+}
+
+#chat-window {
+  min-height: 150px;
+  max-width: 65em;
+}
+#chat-field {
+  max-width: 67em;
+  margin: auto;
+}
+#chat-button {
+  text-align: center;
+}
+#chat-div {
+  border-radius: 8px;
+  box-shadow:10px 10px 25px grey;
+
 }
 #meetup-dogs-info {
   text-align: center;
 }
 
-#meetup-show-infobox {
-
+#meetup_show_infobox {
+  /* padding: 30px; */
+  border: solid black 2px;
 }
 
 #map {
@@ -15,11 +42,14 @@
 }
 #map-rsvp {
   padding-top: 10px;
-
+  margin: auto;
 }
 
 #rsvp-button {
-  margin-left: 38%;
+  margin-left: 26em;
+  margin-top: 1em;
+  padding: -5em;
+  position: relative;
 
 }
 
@@ -29,16 +59,17 @@
 
 #attending-dogs {
   box-shadow: 10px 10px 25px grey;
-  margin: auto;
-  margin-top: 25px;
+  /* margin: auto; */
+
   border-radius: 8px;
   border: 2px solid rgba(61,104,68,.75);
-  display: inline-block;
+  /* display: inline-block; */
 
 }
 
 #meetup_show_tile {
   background-color: rgba(217, 202, 192, .85);
+  max-width: 1300px;
 }
 
 .dog-photo {
@@ -57,4 +88,29 @@
 
 .meetup-text-box {
   display: inline-block;
+
+}
+
+.meetup_show_tile{
+  margin: auto;
+  /* margin-right: 3%;
+  border-radius: 3%; */
+}
+#meetup_show_tile {
+  margin: auto;
+}
+#map-div {
+  margin-right: -5em;
+  position: relative;
+  font-family: 'Rammetto One', cursive;
+  border-radius: 8px;
+  box-shadow:10px 10px 25px grey;
+
+
+}
+.meetup-info-box, div > h5 {
+  font-size: 1.5em;
+}
+#meetup-row {
+  margin: auto;
 }
