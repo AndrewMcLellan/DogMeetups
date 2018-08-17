@@ -8,7 +8,7 @@ const DogShowTile = (props) => {
   }
   return(
 
-      <div className="callout primary" id="dog-tile">
+      <div className="callout primary columns small-6" id="dogs-tile">
         <div>
         {dogPhoto}
         </div>

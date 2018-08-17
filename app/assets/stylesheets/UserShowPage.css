@@ -4,9 +4,10 @@
 }
 
 #user-page {
-  margin-left: 45%;
+  margin: auto;
   border-radius: 5%;
-  background-color: rgba(217, 202, 192, .65)
+  background-color: rgba(217, 202, 192, .65);
+  max-width: 1300px;
 }
 
 #text {
@@ -20,4 +21,14 @@
 .outline {
   border: 2px solid black;
   padding: 1px
+}
+
+#user-tile {
+  /* background-color: rgba(217, 202, 192, .65); */
+  opacity: 50%;
+
+}
+
+#dogs-tile {
+
 }

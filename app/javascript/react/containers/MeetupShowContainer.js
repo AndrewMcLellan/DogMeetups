@@ -125,8 +125,6 @@ class MeetupShowContainer extends Component {
             finalAttendeeNames={this.state.finalAttendeeNames}
             />
         </div>
-        <ChatContainer
-          />
       </div>
     )
   }

@@ -3,17 +3,17 @@ import React from 'react'
 
 const UserShowTile = (props) => {
   return(
-    <div className="callout secondary small-6" id="user-tile">
-      <div className="row">
-        <div className="column small-5">
+    <div className="callout secondary" id="user-tile">
+      <div className="">
+        <div className="" id="text">
           <img  className="profile-photo" src={props.profilePhoto.url} />
         </div>
-        <div className="column small-7">
-          <h4>First Name:</h4>
+        <div className="" id="text">
+          <h4 id="text">First Name:</h4>
           {props.firstName}<br />
           {props.city}, {props.state}<br/>
         </div>
-        <a href={"/users/edit"}>Edit Profile</a>
+        <a id="text" href={"/users/edit"}>Edit Profile</a>
       </div>
     </div>
   )

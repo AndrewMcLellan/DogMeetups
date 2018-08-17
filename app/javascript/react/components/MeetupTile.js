@@ -1,5 +1,6 @@
 import React from 'react'
 import MapContainer from '../containers/MapContainer'
+import ChatContainer from '../containers/ChatContainer'
 
 const MeetupTile = (props) => {
   let attendees;
@@ -46,9 +47,9 @@ const MeetupTile = (props) => {
   let rsvpButton;
   if (props.currentUser.id) {
       rsvpButton =
-        <div className="columns small-3" id="rsvp-button">
+        <div className="" id="rsvp-button">
           <form onSubmit={props.handleSubmit}>
-            <button className="hover" id="map button-background">RSVP!</button>
+            <button className="hover" id="button-background">RSVP!</button>
           </form>
         </div>
   }
@@ -62,7 +63,7 @@ const MeetupTile = (props) => {
     <div>
       <iframe className="column small-10" id="map"
         width="300"
-        height="170"
+        height="300"
         src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBYRkmCd2dJJX-oElbgNhHEDoUU_4oCezk&q=${lat},${lng}`}
         >
       </iframe>
@@ -70,58 +71,75 @@ const MeetupTile = (props) => {
   }
   return(
     <div>
-      <div className="callout secondary small-10 meetup_show_tile" id="meetup_show_tile">
-        <div className=" row callout meetup-show-infobox" id="meetup_show_infobox">
+      <div className="callout secondary meetup_show_tile" id="meetup_show_tile">
 
-          <div className="row">
-            <div className="meetup-text-box small-4" id="text">
+        <div className="callout meetup-show-infobox " id="meetup_show_infobox">
+
+          <div className="meetup-text-box" id="text">
+            <div className="columns small-10 meetup-info-box">
               <div>
                 <h5>Meetup Creator:</h5>
                 <a href={"/users/" + props.id}>{props.creator}</a>
                 <h5>Time:  </h5> {props.time}
               </div>
-              <div className="description">
+              <div >
                 <h5>
                   Description:
                 </h5>
-
-                {props.description}
+                {props.description} <br/> <br />
               </div>
             </div>
-            <div className="columns small-5" id="map-div">
+            <div className="row" id="map-rsvp">
+                {error}
+            </div>
+            <div>
+              <div className="columns small-6 edit-link-div"  >
+                <a className="edit-link" href={"/meetups/"+ props.id + "/edit"}>Edit Meetup</a>
+              </div>
+              <div className="columns small-6">
+                {rsvpButton}
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div className="" id="meetup-row">
+          <div className=" callout primary columns small-6" id="map-div">
               Location: <br/>
-              {props.location}
-              {map}
-            </div>
+            {props.location}
+            {map}
           </div>
-        </div>
-        <div className="meetup-dogs-info" id="meetup-dogs-info">
-          <div className="callout primary small-5" id="attending-dogs">
-            <h4>Hosting Dogs: </h4>
-            <div className="small-6">
-              {creatorDogsPhoto}
-            </div>
-          </div>
-          <div className="callout primary small-5" id="attending-dogs">
-            <h4>Attending Dogs: </h4>
-            <ul>
-              <div className="small-10">
-                {attendees}
+
+          <div className="columns small-6" id="meetup-dogs-info">
+            <div className="callout primary " id="attending-dogs">
+              <h4>Hosting Dogs: </h4>
+              <div className="">
+                {creatorDogsPhoto}
               </div>
-            </ul>
+            </div>
+
+            <div className="callout primary " id="attending-dogs">
+              <h4>Attending Dogs: </h4>
+              <ul>
+                <div className="">
+                  {attendees}
+                </div>
+              </ul>
+            </div>
+           </div>
+        </div>
+
+          <div className="row" id="map-rsvp">
+
           </div>
-        </div>
-
-        <div className="row" id="map-rsvp">
-          <div className="columns">
-            {rsvpButton}
+          <div className="row">
+            <div className="callout primary" id="chat-div">
+              <ChatContainer
+                />
             </div>
-            <div className="columns">
-              {error}
-              <a href={"/meetups/"+ props.id + "/edit"}>Click here To edit Meetup</a>
-            </div>
-
-        </div>
+          </div>
         </div>
     </div>
   )

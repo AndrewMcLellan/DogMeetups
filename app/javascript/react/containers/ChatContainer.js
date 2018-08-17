@@ -81,30 +81,31 @@ class ChatContainer extends Component {
   }
 
   render() {
-
     let messages = this.state.messages.map(message => {
       return(
         <Message
           key={message.messageId}
           handle={message.user.handle}
-          icon={message.user.icon_num}
+          icon={message.user.first_name}
           message={message.message}
         />
       )
     }, this);
 
     return(
-      <div className="row">
-        <div className='small-6 callout chat' id='chatWindow'>
+      <div className="" id="">
+        <div className='callout chat' id='chat-window'>
           {messages}
         </div>
-        <form onSubmit={this.handleFormSubmit}>
-          <TextFieldWithSubmit
-            content={this.state.message}
-            name='message'
-            handlerFunction={this.handleMessageChange}
-          />
-        </form>
+        <div>
+          <form onSubmit={this.handleFormSubmit}>
+            <TextFieldWithSubmit
+              content={this.state.message}
+              name='message'
+              handlerFunction={this.handleMessageChange}
+              />
+          </form>
+        </div>
       </div>
     );
   }

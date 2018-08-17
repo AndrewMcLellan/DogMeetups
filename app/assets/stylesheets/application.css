@@ -41,31 +41,21 @@ body {
   font-family: 'Rammetto One', cursive;
 }
 
-.info-box {
-  padding: 20px;
-  margin-left: 14%;
 
-}
 #user-tile {
   /* background-color: rgba(217, 202, 192, .65); */
   opacity: 50%;
-  margin-right: 20%;
-  margin-left: 9%;
+  font-size: 1.5em;
+
 }
 
 #dog-tile {
-  /* background-color: rgba(217, 202, 192, .85); */
+  margin: 0 7em 0 7em;
 
 }
 
 #meetup-tile {
   /* background-color: rgba(217, 202, 192, .85); */
-}
-
-.meetup_show_tile{
-  margin: auto;
-  /* margin-right: 3%;
-  border-radius: 3%; */
 }
 
 button {
