@@ -10,11 +10,11 @@ const MeetupIndexTile = (props) => {
       <div className="MeetupIndexTile callout secondary">
 
         <br />
-        <h3 className="callout meetup-index-topbar">
+        <h3 className="">
           <a href={'/meetups/' + props.id}>{props.description}</a>
         </h3>
-        <div className="small-2">
-          <div className="callout row">
+        <div className="">
+          <div className=" ">
             <div className="columns">
               {props.location}
               <br></br>

@@ -5,7 +5,7 @@
 
 #user-page {
   margin: auto;
-  border-radius: 5%;
+  border-radius: 8px;
   background-color: rgba(217, 202, 192, .65);
   max-width: 1300px;
 }
@@ -23,12 +23,40 @@
   padding: 1px
 }
 
+#dogs-show-tile {
+  max-width: 39em;
+  box-shadow:10px 10px 25px grey;
+  border-radius: 8px;
+  font-family: 'Rammetto One'
+}
+
 #user-tile {
   /* background-color: rgba(217, 202, 192, .65); */
   opacity: 50%;
+  font-size: 1.5em;
 
 }
 
-#dogs-tile {
+#dog-tile {
+  max-width: 80em;
 
+
+}
+
+#user-info-tile {
+  max-width: 80em;
+}
+
+#your-dogs {
+  text-align: center;
+  font-family: 'Rammetto One'
+}
+
+#your-meetups {
+  text-align: center;
+  font-family: 'Rammetto One'
+}
+
+#meetup-info {
+  max-width: 80em
 }

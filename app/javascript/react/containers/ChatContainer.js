@@ -85,7 +85,7 @@ class ChatContainer extends Component {
       return(
         <Message
           key={message.messageId}
-          handle={message.user.handle}
+          handle={message.user.first_name}
           icon={message.user.first_name}
           message={message.message}
         />

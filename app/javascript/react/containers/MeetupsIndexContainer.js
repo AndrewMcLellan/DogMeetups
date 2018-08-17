@@ -93,8 +93,8 @@ class MeetupsIndexContainer extends Component {
     }
 
     return(
-        <div className="columns small-6">
-          <div>
+        <div className=" ">
+          <div className="callout meetup-index">
             <form onSubmit={this.handleSubmit}>
               <label>Search</label>
               <input type='text' name='searchString' value={this.state.searchString} onChange={this.handleChange} />

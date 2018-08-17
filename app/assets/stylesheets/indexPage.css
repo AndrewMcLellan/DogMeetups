@@ -1,0 +1,14 @@
+.meetup-index {
+  background-color: rgba(217, 202, 192, .85);
+  min-width: 1300px;
+  margin: auto;
+  margin: 0 25em 0 25em;
+
+}
+.MeetupIndexTile {
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow:10px 10px 25px grey;
+
+}

@@ -26,10 +26,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
-.MeetupIndexTile {
- margin: auto;
 
-}
 
 .nav_bar {
   border-width: 3px;
@@ -46,11 +43,6 @@ body {
   /* background-color: rgba(217, 202, 192, .65); */
   opacity: 50%;
   font-size: 1.5em;
-
-}
-
-#dog-tile {
-  margin: 0 7em 0 7em;
 
 }
 

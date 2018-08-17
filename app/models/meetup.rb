@@ -4,6 +4,7 @@ class Meetup < ApplicationRecord
 
   belongs_to :user
   has_many :attendances
+  has_one :chat
   has_many :dogs, through: :attendances
 
 
