@@ -1,8 +1,10 @@
 .meetup-index {
   background-color: rgba(217, 202, 192, .85);
-  min-width: 1300px;
+  max-width: 1300px;
+
   margin: auto;
-  margin: 0 25em 0 25em;
+  /* margin: 0 15em 0 15em; */
+  border-radius: 8px;
 
 }
 .MeetupIndexTile {
@@ -10,5 +12,24 @@
   margin: auto;
   border-radius: 8px;
   box-shadow:10px 10px 25px grey;
+}
+.MeetupIndexTile h4 {
+  font-family: 'Rammetto One', cursive;
+  font-weight: lighter;
+  font-size: 15px;
+}
 
+.results-header {
+  text-align: center;
+}
+
+.search-field {
+  max-width: 1000px;
+  margin: auto;
+}
+
+#location {
+  font-family: 'Rammetto One', cursive;
+  text-decoration: underline;
+  color: red;
 }

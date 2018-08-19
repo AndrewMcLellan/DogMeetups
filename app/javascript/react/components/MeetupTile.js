@@ -12,8 +12,10 @@ const MeetupTile = (props) => {
     creatorDogsPhoto = props.creatorDogs.map(dog => {
       return(
         <div key={`dog: ${dog.id}`}>
-          <img src={dog.dog_photo.url}></img>
-          {dog.name}
+          <img id="host-dog-photo" src={dog.dog_photo.url}></img>
+          <h4 id="dog-name-text">
+            {dog.name}
+          </h4>
         </div>
       )
     })
@@ -28,8 +30,10 @@ const MeetupTile = (props) => {
             <li>
               <img src={attendee.dog_photo.url}/>
             </li>
+            <h4 id="dog-name-text">
+              {attendee.name}
+            </h4>
           </a>
-          {attendee.name}
         </div>
       )
     })
@@ -38,7 +42,7 @@ const MeetupTile = (props) => {
   let error;
   if (props.joinError != "") {
     error =
-    <div>
+    <div id="error">
       {props.joinError}
     </div>
   }
@@ -71,8 +75,7 @@ const MeetupTile = (props) => {
   }
   return(
     <div>
-      <div className="callout secondary meetup_show_tile" id="meetup_show_tile">
-
+      <div className="row callout secondary meetup_show_tile" id="meetup_show_tile">
         <div className="callout meetup-show-infobox " id="meetup_show_infobox">
 
           <div className="meetup-text-box" id="text">
@@ -89,58 +92,53 @@ const MeetupTile = (props) => {
                 {props.description} <br/> <br />
               </div>
             </div>
-            <div className="row" id="map-rsvp">
-                {error}
-            </div>
             <div>
-              <div className="columns small-6 edit-link-div"  >
-                <a className="edit-link" href={"/meetups/"+ props.id + "/edit"}>Edit Meetup</a>
-              </div>
-              <div className="columns small-6">
-                {rsvpButton}
+              <div>
+                <div className="columns small-6 edit-link-div">
+                  <a className="edit-link" href={"/meetups/"+ props.id + "/edit"}>Edit Meetup</a>
+                </div>
+                <div className="columns small-6">
+                  {rsvpButton} <br/> <br/>
+                  <div className="" id="map-rsvp error">
+                    {error}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-
-
         </div>
-        <div className="" id="meetup-row">
-          <div className=" callout primary columns small-6" id="map-div">
+
+
+          <div className="columns">
+            <div className="callout primary columns small-6" id="map-div">
               Location: <br/>
-            {props.location}
-            {map}
+              {props.location}
+              {map}
+            </div>
+            <div className=" columns small-6 callout primary" id="chat-div">
+              <ChatContainer
+                />
+            </div>
           </div>
 
-          <div className="columns small-6" id="meetup-dogs-info">
-            <div className="callout primary " id="attending-dogs">
-              <h4>Hosting Dogs: </h4>
+          <div className="columns" id="meetup-dogs-info">
+            <div className="callout primary columns small-6 " id="attending-dogs">
+              <h4 id="text">Hosting Dogs: </h4>
               <div className="">
                 {creatorDogsPhoto}
               </div>
             </div>
 
-            <div className="callout primary " id="attending-dogs">
-              <h4>Attending Dogs: </h4>
+            <div className="callout primary columns small-6 " id="attending-dogs">
+              <h4 id="text">Attending Dogs: </h4>
               <ul>
-                <div className="">
+                <div className="" id="">
                   {attendees}
                 </div>
               </ul>
             </div>
-           </div>
-        </div>
-
-          <div className="row" id="map-rsvp">
-
           </div>
-          <div className="row">
-            <div className="callout primary" id="chat-div">
-              <ChatContainer
-                />
-            </div>
-          </div>
-        </div>
+      </div>
     </div>
   )
 }

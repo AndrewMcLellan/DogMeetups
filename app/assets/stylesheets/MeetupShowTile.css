@@ -46,10 +46,13 @@
 }
 
 #rsvp-button {
-  margin-left: 26em;
-  margin-top: 1em;
-  padding: -5em;
-  position: relative;
+  /* margin-left: 26em;
+  margin-top: 1em; */
+  /* padding: -5em; */
+  position: absolute;
+  right: 3.7em;
+  top: -3em
+
 
 }
 
@@ -59,7 +62,7 @@
 
 #attending-dogs {
   box-shadow: 10px 10px 25px grey;
-  /* margin: auto; */
+  min-height: 300px;
 
   border-radius: 8px;
   border: 2px solid rgba(61,104,68,.75);
@@ -73,8 +76,8 @@
 }
 
 .dog-photo {
-  height: 100px;
-  width: 150px;
+  height: 200px;
+  width: 300px;
 }
 
 #attendee-dog-photo {
@@ -105,12 +108,18 @@
   font-family: 'Rammetto One', cursive;
   border-radius: 8px;
   box-shadow:10px 10px 25px grey;
-
-
 }
 .meetup-info-box, div > h5 {
   font-size: 1.5em;
 }
 #meetup-row {
   margin: auto;
+}
+#host-dog-photo {
+  max-width: 300px;
+  max-height: 200px
+}
+
+#dog-name-text {
+  font-family: 'Rammetto One', cursive;
 }

@@ -7,26 +7,26 @@ const MeetupIndexTile = (props) => {
 
   return(
     <div>
-      <div className="MeetupIndexTile callout secondary">
+      <div className="MeetupIndexTile callout secondary" id="">
+        <a href={'/meetups/' + props.id}>
+          <h3>
+          </h3>
 
-        <br />
-        <h3 className="">
-          <a href={'/meetups/' + props.id}>{props.description}</a>
-        </h3>
+        <h3 id="location">{props.location}</h3>
+        <h4>
+          {props.date}, {props.time}
+        </h4>
+        <h4 className="">
+          {props.description}
+        </h4>
         <div className="">
-          <div className=" ">
-            <div className="columns">
-              {props.location}
-              <br></br>
-              {props.date}
-            </div>
+          <div className="columns">
           </div>
           <div>
             {props.creatorDogs.name}
           </div>
         </div>
-        <br />
-        <br />
+      </a>
       </div>
     </div>
 

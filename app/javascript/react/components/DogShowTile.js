@@ -8,17 +8,21 @@ const DogShowTile = (props) => {
   }
   return(
 
-      <div className="callout primary columns small-6" id="dogs-show-tile">
-        <div>
-        {dogPhoto}
-        </div>
-        {props.name}<br />
-        Age: {props.age} <br/>
-        {props.weight} lbs
-        <h4 id="text">Breed</h4>
-        {props.breed}
-        <div>
-          <a href={"/dogs/" + props.id + "/edit"}>Edit Dogs Profile</a>
+      <div className="callout primary columns" id="dogs-show-tile">
+        <div className="row">
+          <div className="columns small-5">
+            {props.name}<br />
+            Age: {props.age} <br/>
+            {props.weight} lbs
+            <h4 id="text">Breed</h4>
+            {props.breed}
+            <div>
+              <a href={"/dogs/" + props.id + "/edit"}>Edit Dogs Profile</a>
+            </div>
+          </div>
+          <div className="columns small-7">
+            {dogPhoto}
+          </div>
         </div>
       </div>
 

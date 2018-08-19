@@ -2,16 +2,17 @@ import React from 'react'
 
 const MeetupShowTile = (props) => {
   return(
-    <div>
+    <div id="text">
       <a href={'/meetups/' + props.id}>
         <div className="callout primary" id="meetup-tile">
-          <h4>Meetup details</h4>
-          {props.description} <br/>
+          <div id="meetup-details">
+            <h4 className="" id="text">Meetup details</h4>
+          </div>
+          {props.date}, {props.time}
+          <br/>
           {props.location}
-        <p>
-          {props.date}<br/>
-          {props.time}
-        </p>
+          <br/>
+          {props.description}
           <div>
           </div>
         </div>

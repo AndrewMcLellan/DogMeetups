@@ -7,3 +7,13 @@
     text-shadow: 4px 4px #0A1016;
 
 }
+
+#new-meetup {
+  background-color: rgba(217, 202, 192, .65);
+  left: 15em;
+
+}
+
+#new-meetup-all {
+  position: relative;
+}
