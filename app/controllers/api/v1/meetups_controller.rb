@@ -4,12 +4,12 @@ class Api::V1::MeetupsController < ApplicationController
     if current_user
       ip2 = request.remote_ip
       ip = Geokit::Geocoders::IpGeocoder.geocode(ip2)
-
+      binding.pry
 
       @user = current_user
       @user.set_user_location(@user.id)
       # render json: Meetup.within(2, :origin => @user)
-      render json: Meetup.within(10, :origin => ip2)
+      render json: Meetup.within(10, :origin => ip)
 
     else
       render json: Meetup.all
