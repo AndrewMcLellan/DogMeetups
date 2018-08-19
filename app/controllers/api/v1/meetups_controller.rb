@@ -9,7 +9,7 @@ class Api::V1::MeetupsController < ApplicationController
       @user = current_user
       @user.set_user_location(@user.id)
       # render json: Meetup.within(2, :origin => @user)
-      render json: Meetup.within(10, :origin => @user)
+      render json: Meetup.within(10, :origin => ip2)
 
     else
       render json: Meetup.all
