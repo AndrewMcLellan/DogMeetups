@@ -4,7 +4,6 @@ class Api::V1::MeetupsController < ApplicationController
     if current_user
       ip2 = request.remote_ip
       ip = Geokit::Geocoders::IpGeocoder.geocode(ip2)
-      binding.pry
 
       @user = current_user
       @user.set_user_location(@user.id)
