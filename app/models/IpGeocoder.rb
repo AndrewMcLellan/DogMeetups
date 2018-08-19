@@ -1,0 +1,3 @@
+class IpGeocoder < ApplicationRecord
+
+end
