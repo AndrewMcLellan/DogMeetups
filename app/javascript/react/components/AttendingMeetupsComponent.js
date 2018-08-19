@@ -3,9 +3,10 @@ import React from 'react'
 const AttendingMeetupsComponent = (props) => {
 
   let attendances = props.attendance.map(attendance => {
+    debugger;
     return(
       <div>
-        <h4>{attendance.attended_meetup.date}</h4>
+        <h4 id="text">{attendance.attended_meetup.date}</h4>
         {attendance.attended_meetup.time}<br/>
         {attendance.attended_meetup.location}
       </div>
@@ -15,7 +16,7 @@ const AttendingMeetupsComponent = (props) => {
 
   return(
     <div>
-      <div className="callout primary">
+      <div className="callout primary" id="text">
         {attendances}
       </div>
     </div>

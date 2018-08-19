@@ -1,6 +1,6 @@
 .profile-photo {
-  height: 100px;
-  width: 150px;
+  height: 150px;
+  width: 225px;
 }
 
 #user-page {
@@ -12,6 +12,7 @@
 
 #text {
   font-family: 'Rammetto One', cursive;
+  color: rgb(111,115,229);
 }
 
 #text h5 {
@@ -39,8 +40,7 @@
 
 #dog-tile {
   max-width: 80em;
-
-
+  border-radius: 8px;
 }
 
 #user-info-tile {
@@ -49,14 +49,33 @@
 
 #your-dogs {
   text-align: center;
-  font-family: 'Rammetto One'
+  font-family: 'Rammetto One';
+  color: rgb(111,115,229);
+  text-shadow: 1px 1px black;
+  border-radius: 8px;
+
 }
 
 #your-meetups {
   text-align: center;
-  font-family: 'Rammetto One'
+  font-family: 'Rammetto One';
+  color: rgb(111,115,229);
+  border-radius: 8px;
 }
 
 #meetup-info {
-  max-width: 80em
+  max-width: 80em;
+}
+
+#meetup-details {
+  text-decoration: underline;
+}
+
+#meetup-tile {
+  border-radius: 8px;
+}
+#error {
+  color: red;
+  margin-left:12em;
+  text-align: center;
 }

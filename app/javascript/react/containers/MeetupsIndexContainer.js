@@ -70,6 +70,7 @@ class MeetupsIndexContainer extends Component {
             id={meetup.id}
             location={meetup.location}
             date={meetup.date}
+            time={meetup.time}
             description={meetup.description}
             creatorDogs={meetup.creator_dogs}
             attendees={meetup.meetup_attendees}
@@ -84,6 +85,7 @@ class MeetupsIndexContainer extends Component {
             id={meetup.id}
             location={meetup.location}
             date={meetup.date}
+            time={meetup.time}
             description={meetup.description}
             creatorDogs={meetup.creator_dogs}
             attendees={meetup.meetup_attendees}
@@ -95,11 +97,12 @@ class MeetupsIndexContainer extends Component {
     return(
         <div className=" ">
           <div className="callout meetup-index">
-            <form onSubmit={this.handleSubmit}>
+            <form className="search-field" onSubmit={this.handleSubmit}>
               <label>Search</label>
               <input type='text' name='searchString' value={this.state.searchString} onChange={this.handleChange} />
               <input type='submit' value='Submit' />
             </form>
+            <h4 className="results-header" id="text">Showing Results Within 10 miles of you: </h4>
             <div>
               {meetups}
             </div>

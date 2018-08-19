@@ -110,8 +110,8 @@ class UserShowContainer extends Component {
     })
 
     return(
-      <div className="callout" id="user-page">
-        <div className="row" id="user-info-tile">
+      <div className="row callout" id="user-page">
+        <div className="" id="user-info-tile">
           <UserShowTile
             key={this.state.user.id}
             id={this.state.user.id}
@@ -124,21 +124,21 @@ class UserShowContainer extends Component {
             profilePhoto={this.state.user.profile_photo}
             />
         </div>
-        <div className="">
-          <div className="row" id="dog-tile">
+        <div className="row">
+          <div className="columns small-6" id="dog-tile">
             <h4 className="callout" id="your-dogs">Your Dogs:</h4>
             {userDogs}
           </div>
-        </div>
-        <div className="row">
           <div className="columns small-6 large-6" id="meetup-info">
             <h4 className="callout" id="your-meetups">Your Meetups:</h4>
             {userMeetups}
+            <div className="" id="">
+              <h4 className="callout" id="your-dogs">Meetups You Are Attending: </h4>
+              {userAtteendances}
+            </div>
           </div>
-          <div className="columns small-6">
-            <h4>Meetups You Are Attending: </h4>
-            {userAtteendances}
-          </div>
+        </div>
+        <div className="">
         </div>
       </div>
 

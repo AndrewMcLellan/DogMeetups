@@ -8,13 +8,13 @@
     font-family: 'Rammetto One', cursive;
     font-size: 60px;
     text-shadow: 4px 4px #0A1016;
-
 }
 
 #new-dog {
   background-color: rgba(217, 202, 192, .65);
-  margin-left: 50%;
-  margin-right: 3%;
+  position: absolute;
+  left: 40em;
+  /* margin-right: 3%;  */
 }
 
 #new-user-title {
