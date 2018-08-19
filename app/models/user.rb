@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   mount_uploader :profile_photo, ProfilePhotoUploader
 
-
+  attr_accessor :set_user_location
 
   has_many :dogs
   has_many :meetups
@@ -22,6 +22,13 @@ class User < ApplicationRecord
     url = URI.parse(url)
     str = url.read
     data = JSON.parse(str)
+  end
+
+  def set_user_location(id)
+    user = User.find(id)
+    user.lat = user.geolocate_user['results'][0]['geometry']['location']['lat'].to_f
+    user.lng = user.geolocate_user['results'][0]['geometry']['location']['lng'].to_f
+    user.save
   end
 
 

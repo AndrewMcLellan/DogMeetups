@@ -1,11 +1,16 @@
 class Api::V1::MeetupsController < ApplicationController
+
   def index
     if current_user
-      @user = User.find(current_user.id)
-      @user.lat = @user.geolocate_user['results'][0]['geometry']['location']['lat'].to_f
-      @user.lng = @user.geolocate_user['results'][0]['geometry']['location']['lng'].to_f
-      @user.save
-      render json: Meetup.within(50, :origin => @user)
+      ip2 = request.remote_ip
+      ip = Geokit::Geocoders::IpGeocoder.geocode(ip2)
+
+
+      @user = current_user
+      @user.set_user_location(@user.id)
+      # render json: Meetup.within(2, :origin => @user)
+      render json: Meetup.within(10, :origin => @user)
+
     else
       render json: Meetup.all
     end
