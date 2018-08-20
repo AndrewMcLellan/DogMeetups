@@ -1,19 +1,18 @@
 #new-meetup-title {
-    margin-left: 56.5%;
-    margin-right: 3%;
+    text-align: center;
+    margin-right: ;
     color: rgb(111,115,229);
     font-family: 'Rammetto One', cursive;
     font-size: 60px;
-    text-shadow: 4px 4px #0A1016;
+    text-shadow: 2px 2px white;
 
 }
 
 #new-meetup {
-  background-color: rgba(217, 202, 192, .65);
-  left: 15em;
-
+  background-color: rgba(217, 202, 192, .85);
+  position: sticky;
 }
 
-#new-meetup-all {
-  position: relative;
-}
+/* #new-meetup-all {
+  position: ;
+} */

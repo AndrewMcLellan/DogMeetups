@@ -82,7 +82,7 @@ const MeetupTile = (props) => {
             <div className="columns small-10 meetup-info-box">
               <div>
                 <h5>Meetup Creator:</h5>
-                <a href={"/users/" + props.id}>{props.creator}</a>
+                <a href={"/users/" + props.userId}>{props.creator}</a>
                 <h5>Time:  </h5> {props.time}
               </div>
               <div >

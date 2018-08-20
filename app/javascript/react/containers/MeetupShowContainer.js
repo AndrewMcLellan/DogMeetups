@@ -104,12 +104,14 @@ class MeetupShowContainer extends Component {
 
 
   render() {
+    debugger;
     return(
       <div>
         <div>
           <MeetupTile
             key={this.state.meetup.id}
             id={this.state.meetup.id}
+            userId={this.state.meetup.user_id}
             location={this.state.meetup.location}
             creator={this.state.meetup.creator}
             description={this.state.meetup.description}

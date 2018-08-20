@@ -136,6 +136,9 @@ class UserShowContainer extends Component {
               <h4 className="callout" id="your-dogs">Meetups You Are Attending: </h4>
               {userAtteendances}
             </div>
+            <div>
+              <a className="edit-link" href={"/meetups/new"}>Add New Meetup</a>
+            </div>
           </div>
         </div>
         <div className="">

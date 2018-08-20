@@ -15,7 +15,7 @@ class MeetupsController < ApplicationController
       @meetup.lng = @meetup.geolocate['results'][0]['geometry']['location']['lng'].to_f
       if @meetup.save
         flash[:notice] = "Meetup Saved Successfully"
-        redirect_to meetups_path
+        redirect_to meetup_path(@meetup.id)
       else
         @errors = @meetup.errors.full_messages
         render action: 'new'

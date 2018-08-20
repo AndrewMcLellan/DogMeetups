@@ -35,6 +35,8 @@
   /* background-color: rgba(217, 202, 192, .65); */
   opacity: 50%;
   font-size: 1.5em;
+  background-color: #F0EAD6;
+  border-radius: 8px;
 
 }
 
@@ -53,7 +55,19 @@
   color: rgb(111,115,229);
   text-shadow: 1px 1px black;
   border-radius: 8px;
+}
 
+#your-info {
+  font-family: 'Rammetto One';
+  color: rgb(111,115,229);
+  text-shadow: 1px 1px black;
+  border-radius: 8px;
+}
+#your-info  li {
+  font-family: 'Rammetto One';
+  color: rgb(111,115,229);
+  font-size: 20px;
+  text-shadow: 1px 1px white;
 }
 
 #your-meetups {
@@ -79,3 +93,27 @@
   margin-left:12em;
   text-align: center;
 }
+
+.user-page-links ul {
+  padding: 0rem;
+
+}
+.user-page-links li {
+  list-style-type: none;
+  padding: 0rem;
+  font-family: 'Rammetto One';
+  color: red;
+  margin-left: -1rem;
+
+
+}
+#links-text {
+  font-family: 'Rammetto One';
+
+
+}
+
+
+
+
+/* Demo purposes only */

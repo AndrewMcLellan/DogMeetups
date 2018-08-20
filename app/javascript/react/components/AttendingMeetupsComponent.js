@@ -3,7 +3,6 @@ import React from 'react'
 const AttendingMeetupsComponent = (props) => {
 
   let attendances = props.attendance.map(attendance => {
-    debugger;
     return(
       <div>
         <h4 id="text">{attendance.attended_meetup.date}</h4>

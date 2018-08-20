@@ -5,12 +5,20 @@ const UserShowTile = (props) => {
   return(
     <div className="callout secondary" id="user-tile">
       <div className="row">
-        <div className="columns small-8" id="text">
-          <h4 id="text">First Name:</h4>
-          {props.firstName}<br />
+        <div className="columns small-8" id="your-info">
+
+          {props.firstName} {props.lastName}<br />
           {props.city}, {props.state}<br/>
-        <a id="text" href={"/users/edit"}>Edit Profile</a>
+        <div className="user-page-links">
+            <ul>
+              <li><a id="links-text" href={"/meetups/new"}>Add New Meetup</a></li>
+              <li><a id="links-text" href={"/users/edit"}>Edit Profile</a></li>
+              <li><a id="links-text" href={"/dogs/new"}>Add New Dog</a></li>
+            </ul>
+          </div>
+
         </div>
+
         <div className="columns small-4" id="text">
           <img  className="profile-photo" src={props.profilePhoto.url} />
         </div>

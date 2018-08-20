@@ -1,53 +1,61 @@
-<div class="new-meetup-all">
-  <h2 class="" id="new-meetup-title">Create Meetpup!</h2>
+<div class="row">
+  <div class="columns small-6">
 
-  <div class="row callout secondary" id="new-meetup">
-    <%= form_for(@meetup) do |f| %>
+  </div>
+  <div class="">
 
-    <div class="columns field">
-      <h4 id="field-text">
-        <%= f.label :location %><br />
-        <%= f.text_field :location , autofocus: true, autocomplete: "location" %>
-      </h4>
-    </div>
+    <h2 class="" id="new-meetup-title">Create Meetpup!</h2>
+    <div class="callout" id="new-meetup">
+      <%= form_for(@meetup) do |f| %>
 
-
-    <div class="">
-      <div class="columns small-6 field">
+      <div class="columns field">
         <h4 id="field-text">
-          <%= f.label :date %><br />
-          <%= f.text_field :date, autocomplete: "date" %>
+          <%= f.label :location %><br />
+          <%= f.text_field :location , autofocus: true, autocomplete: "location" %>
         </h4>
       </div>
 
-      <div class="columns small-6 field">
+
+      <div class="row columns">
+        <div class="columns small-6 field">
+          <h4 id="field-text">
+            <%= f.label :date %><br />
+            <%= f.text_field :date, autocomplete: "date" %>
+          </h4>
+        </div>
+
+        <div class="columns small-6 field">
+          <h4 id="field-text">
+            <%= f.label :time %><br />
+            <%= f.text_field :time, autocomplete: "date" %>
+          </h4>
+        </div>
+      </div>
+
+      <div class="columns field">
         <h4 id="field-text">
-          <%= f.label :time %><br />
-          <%= f.text_field :time, autocomplete: "date" %>
+          <%= f.label :description %><br />
+          <%= f.text_area :description %>
         </h4>
       </div>
-    </div>
 
-    <div class="columns field">
-      <h4 id="field-text">
-        <%= f.label :description %><br />
-        <%= f.text_area :description %>
-      </h4>
-    </div>
+      <div class="actions">
+        <h4 id="field-text">
+          <%= f.submit "Add Meetup" %>
+        </h4>
+      </div>
+      <% end %>
 
-    <div class="actions">
-      <h4 id="field-text">
-        <%= f.submit "Add Meetup" %>
-      </h4>
+      <% if !@errors.nil? %>
+      <ul>
+        <% @errors.each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+      </ul>
     </div>
     <% end %>
 
-    <% if !@errors.nil? %>
-    <ul>
-      <% @errors.each do |error| %>
-      <li><%= error %></li>
-      <% end %>
-    </ul>
+
+
   </div>
-  <% end %>
 </div>
