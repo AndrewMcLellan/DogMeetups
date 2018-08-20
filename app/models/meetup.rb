@@ -18,7 +18,7 @@ class Meetup < ApplicationRecord
     data = JSON.parse(str)
   end
 
-  
+
   # def near_user
   #   @user_location = current_user.geolocate
   #   Meetup.within(5, origin: => @user_location)

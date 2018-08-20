@@ -5,17 +5,18 @@ class Api::V1::MeetupsController < ApplicationController
       ip2 = request.remote_ip
       ip = Geokit::Geocoders::IpGeocoder.geocode(ip2)
 
+
       @user = current_user
       @user.set_user_location(@user.id)
       # render json: Meetup.within(2, :origin => @user)
-      render json: Meetup.within(10, :origin => ip)
-
+      render json: Meetup.within(10, :origin => @user).order(date: :desc)
     else
       render json: Meetup.all
     end
   end
 
   def show
+
     render json: Meetup.find(params[:id])
   end
 

@@ -73,6 +73,7 @@ const MeetupTile = (props) => {
       </iframe>
     </div>
   }
+  debugger;
   return(
     <div>
       <div className="row callout secondary meetup_show_tile" id="meetup_show_tile">
