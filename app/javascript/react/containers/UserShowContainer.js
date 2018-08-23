@@ -26,20 +26,23 @@ class UserShowContainer extends Component {
       errors: [],
       attendances: []
     }
+    this.handleDeleteAttendance = this.handleDeleteAttendance.bind(this)
   }
 
-  handleDeleteMeetup(meetupId) {
-  fetch(`/api/v1/meetups/${meetupId}`, {
-    credentials: 'same-origin',
-    method: 'DELETE'
-   })
-   .then(response => response.json())
-   .then( response => {
-     this.setState({
-       errors: response.errors,
-       meetups: response.reviews
+  handleDeleteAttendance(meetupId, attendanceId) {
+    fetch(`/api/v1/meetups/${meetupId}/attendances/${attendanceId}`, {
+      credentials: 'same-origin',
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json'}
      })
-   })
+     .then(response => response.json())
+     .then(response => {
+       debugger;
+       this.setState({
+         errors: response.errors,
+         meetups: response.reviews
+       })
+     })
  }
 
   componentDidMount() {
@@ -55,7 +58,6 @@ class UserShowContainer extends Component {
     })
     .then(response => response.json())
     .then(response => {
-      console.log(response)
       this.setState({
         user: response.user,
         user_dogs: response.user.user_dogs,
@@ -85,9 +87,6 @@ class UserShowContainer extends Component {
     })
 
     let userMeetups = this.state.user_meetups.map(meetup => {
-      let handleDelete = () => {
-        this.handleDeleteMeetup(meetup.id)
-      }
       return(
         <MeetupShowTile
           key={meetup.id}
@@ -96,12 +95,11 @@ class UserShowContainer extends Component {
           date={meetup.date}
           description={meetup.description}
           time={meetup.time}
-          handleDelete={handleDelete}
           />
       )
     })
 
-    let userAtteendances = this.state.attendances.map(attendance => {
+    let userAttendances = this.state.attendances.map(attendance => {
       return(
         <AttendingMeetupsComponent
           attendance={attendance}
@@ -134,11 +132,9 @@ class UserShowContainer extends Component {
             {userMeetups}
             <div className="" id="">
               <h4 className="callout" id="your-dogs">Meetups You Are Attending: </h4>
-              {userAtteendances}
+              {userAttendances}
             </div>
-            <div>
-              <a className="edit-link" href={"/meetups/new"}>Add New Meetup</a>
-            </div>
+
           </div>
         </div>
         <div className="">

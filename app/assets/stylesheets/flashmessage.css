@@ -1,0 +1,8 @@
+.flash {
+  color: red;
+  font-family: 'Rammetto One', cursive;
+  text-align: center;
+  background-color: rgba(217, 202, 192, .85);
+  margin: 0 40em 0 40em;
+  border: 1px solid black;
+}

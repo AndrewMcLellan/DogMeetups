@@ -4,7 +4,7 @@
     <h2 className="login-text" id="login-text">Log in</h2>
   </div>
 
-  <div class="log-in-tile" id="text">
+  <div class="row log-in-tile" id="text">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="columns field" id="text">
       <%= f.label :email %><br />
@@ -28,5 +28,7 @@
     </div>
     <% end %>
 
+
   </div>
+
 </div>

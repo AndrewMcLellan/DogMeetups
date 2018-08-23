@@ -1,8 +1,9 @@
 .log-in-tile {
-  background-color: rgba(217, 202, 192, .65);
-  position: absolute;
-  margin-left: 30em;
+  background-color: rgba(217, 202, 192, .75);
+  border: 1px solid black;
   padding: 5px;
+  /* position: absolute;
+  margin-left: 30em; */
   /* margin-right: 3%; */
 }
 
@@ -12,7 +13,7 @@
   text-shadow: 2px 2px white;
   font-family: 'Rammetto One', cursive;
   text-align: center;
-  margin-left: 12em;
+
 }
 
 .log-in-title {
