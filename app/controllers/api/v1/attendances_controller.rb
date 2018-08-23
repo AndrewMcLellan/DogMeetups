@@ -19,7 +19,7 @@ class Api::V1::AttendancesController < ApplicationController
       end
       last_id = attendance.id
     end
-    
+
     if meetup.user.dogs[0].id != current_user.dogs[0].id && count == 0
       if attendance.save
         render json: {attendee: current_user.dogs[0]}
@@ -29,6 +29,17 @@ class Api::V1::AttendancesController < ApplicationController
       end
     else
       render json: { attendee: current_user.dogs[0], errors: attendance.errors.full_messages }
+    end
+  end
+
+  def destroy
+    attendance = Attendance.find(params[:id])
+    if attendance.destroy
+      attendances = attendance.meetup.attendances
+      render json: { attendances: attendances, errors: [] }
+    else
+      attendances = attendance.meetup.attendances
+      render json: { attendances: attendances, errors: attendace.errors.full_messages }
     end
   end
 

@@ -35,12 +35,14 @@ class SearchBar extends Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <label>Search</label>
-        <input type='text' name='searchString' value={this.state.searchString} onChange={this.handleChange} />
+      <div className="row">
+        <form  className="columns" onSubmit={this.handleSubmit}>
+          <label>Search</label>
+          <input type='text' name='searchString' value={this.state.searchString} onChange={this.handleChange} />
 
-        <input type='submit' value='Submit' />
-      </form>
+          <input type='submit' value='Submit' />
+        </form>
+      </div>
     )
   }
 }
