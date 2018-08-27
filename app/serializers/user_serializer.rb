@@ -18,15 +18,17 @@ class UserSerializer < ActiveModel::Serializer
       attended_meetup = []
       addentance = []
       object = {}
-      attendance =  dog.attendances
-      dog.attendances.each do |attendance|
-        attended_meetup = attendance.meetup
-        object = {:attendance => attendance, :attended_meetup => attended_meetup }
-        dog_attendances << object
+      attendance = dog.attendances
+      if dog.attendances.length > 0
+        dog.attendances.each do |attendance|
+          attended_meetup = attendance.meetup
+          object = {:attendance => attendance, :attended_meetup => attended_meetup, :dog_name => dog.name}
+          dog_attendances << object
+        end
       end
-      all_attendances << dog_attendances
     end
-    return all_attendances
+    all_attendances << dog_attendances
+    return dog_attendances
   end
 
 

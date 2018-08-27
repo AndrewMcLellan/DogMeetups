@@ -1,5 +1,5 @@
 class Api::V1::AttendancesController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
+  # protect_from_forgery unless: -> { request.format.json? }
 
   def show
     render json: Attendance.find(params[:id])
@@ -33,10 +33,21 @@ class Api::V1::AttendancesController < ApplicationController
   end
 
   def destroy
-    attendance = Attendance.find(params[:id])
-    if attendance.destroy
-      attendances = attendance.meetup.attendances
-      render json: { attendances: attendances, errors: [] }
+    a = Attendance.find(params[:id])
+
+    dog = a.dog
+    if a.destroy
+      attendances = dog.attendances
+      object = {}
+      attendances2 = []
+      attendances.each do |attendance|
+        attendance = attendance
+        attended_meetup = attendance.meetup
+        object = {:attendance => attendance, :attended_meetup => attended_meetup, :dog_name => a.dog.name}
+        attendances2 << object
+      end
+      acceptance = "RSVP Removed"
+      render json: { attendances: attendances2, errors: [], acceptance: acceptance }
     else
       attendances = attendance.meetup.attendances
       render json: { attendances: attendances, errors: attendace.errors.full_messages }
