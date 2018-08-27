@@ -5,48 +5,30 @@ class AttendingMeetupsComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      attendances: props.attendance,
+      attendance: props.attendance,
       errors: []
     }
-    this.handleDeleteAttendance = this.handleDeleteAttendance.bind(this)
   }
 
-  handleDeleteAttendance(meetupId, attendanceId) {
-    fetch(`/api/v1/meetups/${meetupId}/attendances/${attendanceId}`, {
-      credentials: 'same-origin',
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json'}
-     })
-     .then(response => response.json())
-     .then(response => {
-       console.log(response)
-       this.setState({
-         errors: response.errors,
-         attendances: response.attendances
-       })
-     })
- }
-
   render() {
-    let attendances = this.state.attendances.map(attendance => {
-      let handleDelete = () => {
-        this.handleDeleteAttendance(attendance.attended_meetup.id, attendance.attendance.id)
-      }
-      return(
-        <div className="callout primary" id="text">
-          <h4 id="text">{attendance.attended_meetup.date}</h4>
-          {attendance.attended_meetup.time}
-          {attendance.attended_meetup.location}
-          <div>
-            <button className="" id="delete-rsvp-button" type="button" value="Remove RSVP" onClick={handleDelete}>Remove RSVP!</button>
-          </div>
+    let tile;
+
+
+    if (this.props.attendance != 0) {
+      tile = <div className="callout primary" id="text">
+        <h4 id="text">{this.state.attendance.attended_meetup.date}</h4>
+          {this.props.attendance.attended_meetup.time}
+          {this.props.attendance.attended_meetup.location}
+          {this.props.attendance.dog_name}
+        <div>
+          <button className="" id="delete-rsvp-button" type="button" value="Remove RSVP" onClick={this.props.handleDelete}>Remove RSVP!</button>
         </div>
-      )
-    })
+      </div>
+    }
 
     return(
       <div>
-        {attendances}
+        {tile}
       </div>
 
     )

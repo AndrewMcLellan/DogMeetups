@@ -24,7 +24,8 @@ class UserShowContainer extends Component {
       user_meetups: [],
       meetups: [],
       errors: [],
-      attendances: []
+      attendances: [],
+      acceptance: ""
     }
     this.handleDeleteAttendance = this.handleDeleteAttendance.bind(this)
   }
@@ -37,13 +38,21 @@ class UserShowContainer extends Component {
      })
      .then(response => response.json())
      .then(response => {
-       debugger;
-       this.setState({
-         errors: response.errors,
-         meetups: response.reviews
-       })
+       if (response.acceptance) {
+         this.setState({
+           errors: response.errors,
+           attendances: response.attendances,
+           acceptance: response.acceptance
+        })
+      } else {
+          this.setState({
+            errors: response.errors,
+            attendances: response.attendances,
+          })
+        }
      })
- }
+  }
+
 
   componentDidMount() {
     fetch(`/api/v1/users/${this.props.params.id}`)
@@ -67,6 +76,8 @@ class UserShowContainer extends Component {
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
+
+
 
 
   render() {
@@ -98,14 +109,27 @@ class UserShowContainer extends Component {
           />
       )
     })
-
-    let userAttendances = this.state.attendances.map(attendance => {
-      return(
-        <AttendingMeetupsComponent
-          attendance={attendance}
-          />
-      )
-    })
+    let userAttendances;
+    if (this.state.attendances) {
+      userAttendances = this.state.attendances.map(attendance => {
+        let handleDelete = (event) => {
+            this.handleDeleteAttendance(attendance.attended_meetup.id, attendance.attendance.id)
+          }
+        return(
+          <div>
+            <AttendingMeetupsComponent
+              attendance={attendance}
+              handleDelete={handleDelete}
+              userId={this.props.params.id}
+              />
+          </div>
+        )
+      })
+    }
+    let acceptanceNotice;
+    if (this.state.acceptance) {
+      acceptanceNotice = this.state.acceptance
+    }
 
     return(
       <div className="row callout" id="user-page">
@@ -132,7 +156,10 @@ class UserShowContainer extends Component {
             {userMeetups}
             <div className="" id="">
               <h4 className="callout" id="your-dogs">Meetups You Are Attending: </h4>
-              {userAttendances}
+                {userAttendances}
+              <div id="text">
+                {acceptanceNotice}
+              </div>
             </div>
 
           </div>
