@@ -13,9 +13,8 @@
   text-shadow: 2px 2px white;
   font-family: 'Rammetto One', cursive;
   text-align: center;
-
 }
 
-.log-in-title {
-
+#log-in-title {
+  text-align: center;
 }

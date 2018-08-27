@@ -1,6 +1,13 @@
 #sign-up {
-  background-color: rgba(217, 202, 192, .65);
-  position: absolute;
-  left: 25em;
+  background-color: rgba(217, 202, 192, .85);
+
   /* margin-right: 3%;  */
+}
+
+#sign-up-text {
+  color: rgb(111,115,229);
+  font-size: 60px;
+  text-shadow: 2px 2px white;
+  font-family: 'Rammetto One', cursive;
+  text-align: center;
 }
