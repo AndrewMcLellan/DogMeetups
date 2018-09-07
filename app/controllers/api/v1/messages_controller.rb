@@ -1,7 +1,12 @@
 class Api::V1::MessagesController < ApplicationController
 
   def index
-    render json: Message
+    binding.pry
   end
+
+  def show
+    binding.pry
+  end
+
 
 end

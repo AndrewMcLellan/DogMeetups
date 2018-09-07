@@ -12,7 +12,8 @@ class Meetup < ApplicationRecord
   acts_as_mappable  :lng_column_name => :lng, presence: true, allow_blank: false
 
   def geolocate
-    url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{location}&key=AIzaSyBYRkmCd2dJJX-oElbgNhHEDoUU_4oCezk"
+    key = ENV["GOOGLE_MAPS"]
+    url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{location}&key=#{key}"
     url = URI.parse(url)
     str = url.read
     data = JSON.parse(str)

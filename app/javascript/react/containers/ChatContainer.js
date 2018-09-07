@@ -18,7 +18,6 @@ class ChatContainer extends Component {
   }
 
   componentDidMount() {
-
     fetch('/api/v1/users', {
       credentials: 'same-origin',
       method: 'GET',
@@ -52,6 +51,7 @@ class ChatContainer extends Component {
         }
       }
     );
+
   }
 
   handleMessageReceipt(message) {
