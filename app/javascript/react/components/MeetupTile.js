@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, Route, IndexRoute, Router, browserHistory } from 'react-router'
 import MapContainer from '../containers/MapContainer'
 import ChatContainer from '../containers/ChatContainer'
 
@@ -26,14 +27,14 @@ const MeetupTile = (props) => {
     attendees = props.attendees.map(attendee => {
       return(
         <div key={`attendee: ${attendee.id}`} className="" id="attendee-dog-photo">
-          <a href={'/users/' + attendee.user_id}>
+          <Link to={'/users/' + attendee.user_id}>
             <li>
               <img src={attendee.dog_photo.url}/>
             </li>
             <h4 id="dog-name-text">
               {attendee.name}
             </h4>
-          </a>
+          </Link>
         </div>
       )
     })
@@ -82,7 +83,7 @@ const MeetupTile = (props) => {
             <div className="columns small-10 meetup-info-box">
               <div>
                 <h5>Meetup Creator:</h5>
-                <a href={"/users/" + props.userId}>{props.creator}</a>
+                <Link to={"/users/" + props.userId}>{props.creator}</Link>
                 <h5>Time:  </h5> {props.time}
               </div>
               <div >
@@ -117,6 +118,8 @@ const MeetupTile = (props) => {
             </div>
             <div className=" columns small-6 callout primary" id="chat-div">
               <ChatContainer
+                key={props.id}
+                meetupId={props.id}
                 />
             </div>
           </div>

@@ -8,7 +8,8 @@ class ChatContainer extends Component {
     this.state = {
       user: {},
       messages: [],
-      message: ''
+      message: '',
+      meetupId: props.meetupId
     }
 
     this.handleMessageReceipt = this.handleMessageReceipt.bind(this);
@@ -18,39 +19,42 @@ class ChatContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/users', {
-      credentials: 'same-origin',
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' }
-    })
-    .then((response) => {
-      let { ok } = response;
-      if (ok) {
-        return response.json();
-      }
-    })
-    .then((data) => {
-      this.setState({user: data})
-    })
-    App.chatChannel = App.cable.subscriptions.create(
-      // Info that is sent to the subscribed method
-      {
-        channel: "ChatChannel",
-        chat_id: 1
-
-        // If you had router, you could do:
-        // chat_id: this.props.params["id"]
-      },
-      {
-        connected: () => console.log("ChatChannel connected"),
-        disconnected: () => console.log("ChatChannel disconnected"),
-        received: data => {
-          // Data broadcasted from the chat channel
-          console.log(data)
-          this.handleMessageReceipt(data)
+    let meetupId = this.props.meetupId
+    if (meetupId != undefined) {
+      fetch(`/api/v1/meetups/${meetupId}/messages`)
+      .then((response) => {
+        let { ok } = response;
+        if (ok) {
+          return response.json();
         }
-      }
-    );
+      })
+      .then((data) => {
+        this.setState({
+          user: data,
+          messages: data
+        })
+      })
+      App.chatChannel = App.cable.subscriptions.create(
+        // Info that is sent to the subscribed method
+        {
+          channel: "ChatChannel",
+          chat_id: meetupId,
+          meetup_id: meetupId
+
+          // If you had router, you could do:
+          // chat_id: this.props.params["id"]
+        },
+        {
+          connected: () => console.log("ChatChannel connected"),
+          disconnected: () => console.log("ChatChannel disconnected"),
+          received: data => {
+            // Data broadcasted from the chat channel
+            console.log(data)
+            this.handleMessageReceipt(data)
+          }
+        }
+      );
+    }
 
   }
 

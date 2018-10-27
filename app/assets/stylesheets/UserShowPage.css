@@ -113,6 +113,10 @@
 
 }
 
+#chat-window {
+  overflow: scroll;
+  max-height: 210px;
+}
 
 
 
