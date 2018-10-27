@@ -115,6 +115,7 @@
 
 #chat-window {
   overflow: scroll;
+  min-height: 210px;
   max-height: 210px;
 }
 
