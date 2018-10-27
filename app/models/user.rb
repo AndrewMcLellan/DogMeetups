@@ -18,9 +18,7 @@ class User < ApplicationRecord
 
 
   def geolocate_user
-    binding.pry
     key = ENV["GOOGLE_MAPS"]
-    binding.pry
     url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{address}#{city}#{state}&key=#{key}"
     url = URI.parse(url)
     str = url.read

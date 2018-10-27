@@ -8,7 +8,6 @@ class Api::V1::MeetupsController < ApplicationController
 
       @user = current_user
       @user.set_user_location(@user.id)
-      # render json: Meetup.within(2, :origin => @user)
       render json: Meetup.within(10, :origin => @user)
     else
       render json: Meetup.all
@@ -16,7 +15,10 @@ class Api::V1::MeetupsController < ApplicationController
   end
 
   def show
-
+    # if params[:id] != "undefined"
+    #   id = params[:id].to_i
+    # end
+    # meetup = Meetup.find(id)
     render json: Meetup.find(params[:id])
   end
 

@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link, Route, IndexRoute, Router, browserHistory } from 'react-router'
+
 
 
 const UserShowTile = (props) => {
@@ -11,9 +13,9 @@ const UserShowTile = (props) => {
           {props.city}, {props.state}<br/>
         <div className="user-page-links">
             <ul>
-              <li><a id="links-text" href={"/meetups/new"}>Add New Meetup</a></li>
-              <li><a id="links-text" href={"/users/edit"}>Edit Profile</a></li>
-              <li><a id="links-text" href={"/dogs/new"}>Add New Dog</a></li>
+              <li><Link id="links-text" to={"/meetups/new"}>Add New Meetup</Link></li>
+              <li><Link id="links-text" to={"/users/edit"}>Edit Profile</Link></li>
+              <li><Link id="links-text" to={"/dogs/new"}>Add New Dog</Link></li>
             </ul>
           </div>
 
