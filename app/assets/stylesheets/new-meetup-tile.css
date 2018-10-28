@@ -10,8 +10,15 @@
 #new-meetup {
   background-color: rgba(217, 202, 192, .85);
   position: sticky;
+  border-radius: 20px;
 }
 
 /* #new-meetup-all {
   position: ;
 } */
+
+#new-meetup-error {
+  font-family: 'Rammetto One', cursive;
+  color: red;
+  text-align: center;
+}

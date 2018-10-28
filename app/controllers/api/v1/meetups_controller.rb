@@ -15,29 +15,28 @@ class Api::V1::MeetupsController < ApplicationController
   end
 
   def create
+    p = params
     if current_user
       meetup = Meetup.new
+      meetup.set_meetup_fields(meetup, p)
       meetup.user_id = current_user.id
-      meetup.time = params[:time]
-      meetup.date = params[:date]
-      meetup.description = params[:description]
-      meetup.location = params[:location]
-      meetup.lat = meetup.geolocate['results'][0]['geometry']['location']['lat'].to_f
-      meetup.lng = meetup.geolocate['results'][0]['geometry']['location']['lng'].to_f
-      if meetup.save
-        render json: { error: "success" }
-      else
-        @errors = meetup.errors.full_messages
-        render json: { error: @errors }
+      if meetup.location != ""
+        meetup.set_lat_lng(meetup)
       end
     else
       flash[:notice] = "You must be singed in to do this!"
     end
+
+    if meetup.save
+      render json: { error: "success" }
+    else
+      @errors = meetup.errors.full_messages
+      render json: { error: @errors }
+    end
   end
 
   def search
-    @meetups = Meetup.find_by_sql("SELECT * FROM meetups WHERE description ILIKE '%#{params[:search_string]}%'")
-    # @meetups = Meetup.all
+    @meetups = Meetup.find_by_sql("SELECT * FROM meetups WHERE location ILIKE '%#{params[:search_string]}%'")
     render json: @meetups
   end
 

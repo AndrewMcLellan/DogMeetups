@@ -4,7 +4,7 @@ const NewMeetupErrorComponent = (props) => {
 
   return(
     <div>
-       - {props.errorMessage} - 
+       - {props.errorMessage} -
     </div>
   )
 }

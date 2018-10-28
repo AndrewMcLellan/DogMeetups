@@ -67,6 +67,7 @@ class NewMeetupContainer extends Component {
       })
       .then(response => response.json())
       .then(response => {
+        debugger;
         this.setState({
           error: response.error
         })
@@ -90,7 +91,7 @@ class NewMeetupContainer extends Component {
 
   render() {
     let newMeetupErrorComponent;
-    if (this.state.error != "success" || this.state.error != '') {
+    if (this.state.error != "success" && this.state.error != '') {
       newMeetupErrorComponent = this.state.error.map(message => {
         return(
           <NewMeetupErrorComponent
@@ -101,9 +102,17 @@ class NewMeetupContainer extends Component {
     }
     return(
       <div>
+
         <form onSubmit={this.handleFormSubmit}>
+          <br />
+          <br/>
+          <div id="new-meetup-title">
+            Create a New Meetup
+          </div>
           <div className="row" id="new-meetup">
-            <div className="columns small-6">
+            <br />
+            <br/>
+            <div className="columns small-6" id ="new-meetup-title">
               <LocationFieldComponent
                 content={this.state.location}
                 label="Location"
@@ -117,7 +126,7 @@ class NewMeetupContainer extends Component {
                 handleDateChange={this.handleDateChange}
                 />
             </div>
-            <div className="columns small-6">
+            <div className="columns small-6" id="new-meetup-title">
               <DescriptionFieldComponent
                 content={this.state.description}
                 label="Description"
@@ -130,8 +139,10 @@ class NewMeetupContainer extends Component {
                 name="time"
                 handleTimeChange={this.handleTimeChange}
                 />
+              <button onClick={this.handleFormSubmit} type="submit" value="Submit" label="Sbumit">Submit</button>
+            </div>
+            <div id="new-meetup-error">
               {newMeetupErrorComponent}
-              <input type="submit" value="Submit" />
             </div>
           </div>
         </form>

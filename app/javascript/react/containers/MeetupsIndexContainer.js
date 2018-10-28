@@ -32,7 +32,7 @@ class MeetupsIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      console.log(body.meetups)
+      debugger;
       this.setState({
         searchResults: body.meetups
        })
