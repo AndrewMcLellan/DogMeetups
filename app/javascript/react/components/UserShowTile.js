@@ -14,6 +14,7 @@ const UserShowTile = (props) => {
         <div className="user-page-links">
             <ul>
               <li><Link id="links-text" to={"/meetups/new"}>Add New Meetup</Link></li>
+              
               <li><Link id="links-text" to={"/users/edit"}>Edit Profile</Link></li>
               <li><Link id="links-text" to={"/dogs/new"}>Add New Dog</Link></li>
             </ul>
